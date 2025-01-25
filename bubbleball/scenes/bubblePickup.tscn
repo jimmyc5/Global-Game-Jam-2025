@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cks515urplypv"]
 
 [ext_resource type="Texture2D" uid="uid://ddv1xksxvxit7" path="res://assets/images/bubble.png" id="1_6appq"]
-[ext_resource type="Script" path="res://bubble_pickup.gd" id="1_yk8ly"]
-[ext_resource type="Script" path="res://scenes/PlayerGroundCheck.gd" id="3_y16q3"]
+[ext_resource type="Script" path="res://scripts/bubble_pickup.gd" id="1_yk8ly"]
+[ext_resource type="Script" path="res://scripts/PlayerGroundCheck.gd" id="3_v73aq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qtxmp"]
 
@@ -31,7 +31,7 @@ mesh = SubResource("SphereMesh_e1pbh")
 [node name="ShapeCast3D" type="ShapeCast3D" parent="." node_paths=PackedStringArray("followHitbox")]
 shape = SubResource("SphereShape3D_57w71")
 target_position = Vector3(0, -0.255, 0)
-script = ExtResource("3_y16q3")
+script = ExtResource("3_v73aq")
 followHitbox = NodePath("../CollisionShape3D")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

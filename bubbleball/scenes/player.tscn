@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_15whe"]
 [ext_resource type="Texture2D" uid="uid://ddv1xksxvxit7" path="res://assets/images/bubble.png" id="2_ih6y8"]
-[ext_resource type="Script" path="res://scenes/PlayerGroundCheck.gd" id="3_xlryd"]
-[ext_resource type="Script" path="res://scenes/camera_pivot.gd" id="3_yn6hj"]
+[ext_resource type="Script" path="res://scripts/PlayerGroundCheck.gd" id="3_xlryd"]
+[ext_resource type="Script" path="res://scripts/camera_pivot.gd" id="3_yn6hj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0237i"]
 friction = 0.06

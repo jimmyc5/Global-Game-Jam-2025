@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b53ltat52xg5b" path="res://scenes/player.tscn" id="2_7ssc2"]
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="2_ugbw3"]
-[ext_resource type="PackedScene" uid="uid://cks515urplypv" path="res://bubblePickup.tscn" id="5_5nsnt"]
+[ext_resource type="PackedScene" uid="uid://cks515urplypv" path="res://scenes/bubblePickup.tscn" id="5_5nsnt"]
 
 [sub_resource type="Environment" id="Environment_fvgty"]
 background_mode = 2
