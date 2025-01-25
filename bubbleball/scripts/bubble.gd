@@ -58,11 +58,26 @@ func is_on_floor():
 		if cast.get_collision_count() > 0:
 			return true
 	return false
-	
-func _physics_process(delta: float) -> void:
+
+func get_camera_rotation(delta):
+	var look_direction = Vector2.ZERO;
+	if Input.is_action_pressed("look_left"):
+		look_direction += Vector2(-1, 0);
+	if Input.is_action_pressed("look_right"):
+		look_direction += Vector2(1, 0);
+	if Input.is_action_pressed("look_up"):
+		look_direction += Vector2(0, -1);
+	if Input.is_action_pressed("look_down"):
+		look_direction += Vector2(0, 1);
+	if look_direction:
+		_camera_input_direction = look_direction * 3
 	_camera_pivot.rotation.x += _camera_input_direction.y * delta
 	_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, tilt_lower_limit, tilt_upper_limit)
 	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
+
+
+func _physics_process(delta: float) -> void:
+	get_camera_rotation(delta)
 
 	_camera_input_direction = Vector2.ZERO
 

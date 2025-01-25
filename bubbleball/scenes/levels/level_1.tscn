@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://ce61kj73fw5yd"]
+[gd_scene load_steps=9 format=3 uid="uid://ce61kj73fw5yd"]
 
 [ext_resource type="PackedScene" uid="uid://001fx7ykfxf7" path="res://scenes/level_base.tscn" id="1_48bvl"]
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="2_jy56a"]
 [ext_resource type="PackedScene" uid="uid://b53ltat52xg5b" path="res://scenes/player.tscn" id="3_lgct4"]
 [ext_resource type="PackedScene" uid="uid://bu8lnkcq2t54t" path="res://scenes/bathtub.tscn" id="4_jye2b"]
-[ext_resource type="PackedScene" uid="uid://cibe2g5qbn53p" path="res://scenes/HUD.tscn" id="5_ggjng"]
-[ext_resource type="PackedScene" uid="uid://d2a40a41h2rsk" path="res://scenes/pause_menu.tscn" id="6_5uoju"]
 [ext_resource type="PackedScene" uid="uid://cnf4v6x6thsi1" path="res://scenes/deathbox.tscn" id="7_6s53y"]
+[ext_resource type="PackedScene" uid="uid://cks515urplypv" path="res://scenes/bubblePickup.tscn" id="8_omfj5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4v2o1"]
 
@@ -15,16 +14,13 @@
 [node name="Level0" type="Node3D"]
 
 [node name="LevelBase" parent="." instance=ExtResource("1_48bvl")]
+bubble_count = 2
 
 [node name="Player" parent="." instance=ExtResource("3_lgct4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100786, 0.783318, 0.183569)
 
 [node name="Bathtub" parent="." instance=ExtResource("4_jye2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02553, -16.7254, -57.8337)
-
-[node name="Hud" parent="." instance=ExtResource("5_ggjng")]
-
-[node name="PauseMenu" parent="." instance=ExtResource("6_5uoju")]
 
 [node name="Ground" type="Node3D" parent="."]
 
@@ -96,3 +92,9 @@ shape = SubResource("BoxShape3D_icjt1")
 
 [node name="Deathbox" parent="." instance=ExtResource("7_6s53y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
+
+[node name="BubblePickup" parent="." instance=ExtResource("8_omfj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50355, -4.51623, -28.6348)
+
+[node name="BubblePickup2" parent="." instance=ExtResource("8_omfj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71235, -4.34392, -28.8517)

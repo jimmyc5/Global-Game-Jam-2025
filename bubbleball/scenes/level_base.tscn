@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://001fx7ykfxf7"]
+[gd_scene load_steps=6 format=3 uid="uid://001fx7ykfxf7"]
 
 [ext_resource type="Shader" path="res://assets/shaders/skybox.gdshader" id="1_f5dg0"]
+[ext_resource type="Script" path="res://scripts/level_base.gd" id="1_w5v7v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ppqg"]
 shader = ExtResource("1_f5dg0")
@@ -21,6 +22,7 @@ volumetric_fog_albedo = Color(1, 0.739239, 0.985467, 1)
 volumetric_fog_sky_affect = 0.609
 
 [node name="LevelBase" type="Node3D"]
+script = ExtResource("1_w5v7v")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7rbie")
