@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://do4ahxm8nnugk"]
+[gd_scene load_steps=11 format=3 uid="uid://do4ahxm8nnugk"]
 
 [ext_resource type="PackedScene" uid="uid://001fx7ykfxf7" path="res://scenes/level_base.tscn" id="1_hiy4t"]
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="2_df1di"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d2a40a41h2rsk" path="res://scenes/pause_menu.tscn" id="5_8mrs8"]
 [ext_resource type="PackedScene" uid="uid://cibe2g5qbn53p" path="res://scenes/HUD.tscn" id="6_cwvi7"]
 [ext_resource type="PackedScene" uid="uid://cnf4v6x6thsi1" path="res://scenes/deathbox.tscn" id="7_rbvhw"]
+[ext_resource type="PackedScene" uid="uid://cks515urplypv" path="res://scenes/bubblePickup.tscn" id="8_yx2a0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4v2o1"]
 
@@ -52,3 +53,6 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D3/StaticBody3D"]
 shape = SubResource("BoxShape3D_icjt1")
+
+[node name="BubblePickup" parent="." instance=ExtResource("8_yx2a0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114479, -1.50504, -15.0618)

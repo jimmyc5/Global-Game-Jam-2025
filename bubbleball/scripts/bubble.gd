@@ -74,14 +74,15 @@ func _physics_process(delta: float) -> void:
 	move_direction.y = 0.0
 	move_direction = move_direction.normalized()
 	
-	var y_velocity := bubble.linear_velocity.y
-	var xz_velocity := bubble.linear_velocity;
-	xz_velocity.y = 0;
-	var newVelocity = xz_velocity.move_toward(move_direction * move_speed, acceleration * delta)
-	newVelocity.y = y_velocity #+ _gravity * delta
-	var computedVelocity = (newVelocity - bubble.linear_velocity) * bubble.mass / delta
-	bubble.apply_central_force(computedVelocity)
-	bubble.apply_torque(Vector3(0,1,0).cross(computedVelocity) / 4)
+	if move_direction:
+		var y_velocity := bubble.linear_velocity.y
+		var xz_velocity := bubble.linear_velocity;
+		xz_velocity.y = 0;
+		var newVelocity = xz_velocity.move_toward(move_direction * move_speed, acceleration * delta)
+		newVelocity.y = y_velocity #+ _gravity * delta
+		var computedVelocity = (newVelocity - bubble.linear_velocity) * bubble.mass / delta
+		bubble.apply_central_force(computedVelocity)
+		bubble.apply_torque(Vector3(0,1,0).cross(computedVelocity) / 4)
 
 	# handle jumping
 	
@@ -96,7 +97,3 @@ func _physics_process(delta: float) -> void:
 	if currentTime < lastJumpInputTime + jump_buffer && currentTime < lastTimeOnFloor + coyote_time:
 		bubble.apply_central_impulse(Vector3(0, -bubble.linear_velocity.y + jump_impulse, 0))
 		lastJumpInputTime = currentTime - jump_buffer
-	
-		
-		
-	
