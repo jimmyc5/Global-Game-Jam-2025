@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://1kngheu81sks"]
+
+[ext_resource type="Texture2D" uid="uid://ddv1xksxvxit7" path="res://assets/images/bubble.png" id="1_qjl41"]
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="2_hij72"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fsljj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gto2n"]
+albedo_texture = ExtResource("1_qjl41")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ner5u"]
+radial_segments = 20
+rings = 10
+
+[node name="Bubble" type="RigidBody3D"]
+script = ExtResource("2_hij72")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fsljj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_gto2n")
+mesh = SubResource("SphereMesh_ner5u")

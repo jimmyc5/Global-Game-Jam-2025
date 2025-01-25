@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://mgcyaxvttemq"]
+
+[ext_resource type="PackedScene" uid="uid://1kngheu81sks" path="res://scenes/bubble.tscn" id="1_v54av"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_s2x2c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdxr3"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Bubble" parent="." instance=ExtResource("1_v54av")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.01892, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.926483, 0.376337, 0, -0.376337, 0.926483, 0, 4.36395, 5.9415)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.410655, 0.911791, 0, -0.911791, 0.410655, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(13.8636, 0, 0, 0, 1, 0, 0, 0, 13.0551, 0, 0, 0)
+mesh = SubResource("BoxMesh_s2x2c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_rdxr3")
