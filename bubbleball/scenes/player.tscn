@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/camera_pivot.gd" id="3_yn6hj"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0237i"]
-friction = 0.06
+friction = 0.2
 bounce = 0.61
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ocy83"]

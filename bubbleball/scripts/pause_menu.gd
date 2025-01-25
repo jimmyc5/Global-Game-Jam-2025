@@ -21,7 +21,7 @@ func pause_game():
 	get_tree().paused = true
 
 func unpause_game():
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
 	canvas.visible = false
 	is_paused = false

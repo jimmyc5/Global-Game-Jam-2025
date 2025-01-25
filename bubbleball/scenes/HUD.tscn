@@ -23,6 +23,7 @@ unique_name_in_owner = true
 material = SubResource("ShaderMaterial_jnh2b")
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 1
 
 [node name="level" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -88,4 +89,5 @@ scroll_active = false
 unique_name_in_owner = true
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 1
 color = Color(0, 0, 0, 1)

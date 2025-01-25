@@ -14,6 +14,8 @@
 
 [node name="Level0" type="Node3D"]
 
+[node name="Hud" parent="." instance=ExtResource("6_cwvi7")]
+
 [node name="LevelBase" parent="." instance=ExtResource("1_hiy4t")]
 
 [node name="Player" parent="." instance=ExtResource("3_xbkol")]
@@ -21,8 +23,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100786, 0.783318, 0.183569
 
 [node name="Bathtub" parent="." instance=ExtResource("4_piski")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.151435, -6.84616, -29.2325)
-
-[node name="Hud" parent="." instance=ExtResource("6_cwvi7")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_8mrs8")]
 
