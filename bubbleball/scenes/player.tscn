@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://b53ltat52xg5b"]
+
+[ext_resource type="Script" path="res://scripts/bubble.gd" id="1_15whe"]
+[ext_resource type="Texture2D" uid="uid://ddv1xksxvxit7" path="res://assets/images/bubble.png" id="2_ih6y8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0237i"]
+friction = 0.28
+bounce = 0.61
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ocy83"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbmr0"]
+transparency = 1
+albedo_texture = ExtResource("2_ih6y8")
+
+[sub_resource type="SphereMesh" id="SphereMesh_l8m1p"]
+radial_segments = 20
+rings = 10
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_15whe")
+
+[node name="Bubble" type="RigidBody3D" parent="."]
+unique_name_in_owner = true
+physics_material_override = SubResource("PhysicsMaterial_0237i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bubble"]
+shape = SubResource("SphereShape3D_ocy83")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bubble"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000249505, -0.000952661, 0.000456691)
+material_override = SubResource("StandardMaterial3D_tbmr0")
+mesh = SubResource("SphereMesh_l8m1p")
+
+[node name="Camera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.830955, 0.556339, 0, -0.556339, 0.830955, 0, 1.95834, 3.16704)
