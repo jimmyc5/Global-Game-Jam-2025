@@ -1,0 +1,56 @@
+[gd_scene load_steps=10 format=3 uid="uid://deunvvut4mp6c"]
+
+[ext_resource type="Material" uid="uid://bb7ephw1iaxat" path="res://assets/material/bubble_material.tres" id="1_12qqh"]
+[ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="2_wxunr"]
+[ext_resource type="Shader" path="res://assets/shaders/skybox.gdshader" id="3_cggw0"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7yd40"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_j1fy8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y62dw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bsceb"]
+shader = ExtResource("3_cggw0")
+shader_parameter/sky_color = Color(0.389732, 0.825184, 0.901184, 1)
+shader_parameter/horizon_color = Color(0.984314, 0.639216, 0.709804, 1)
+
+[sub_resource type="Sky" id="Sky_e2iuc"]
+sky_material = SubResource("ShaderMaterial_bsceb")
+
+[sub_resource type="Environment" id="Environment_pvr26"]
+background_mode = 2
+sky = SubResource("Sky_e2iuc")
+ambient_light_source = 3
+fog_light_color = Color(0.874733, 0.887588, 0.907796, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1737
+volumetric_fog_albedo = Color(1, 0.739239, 0.985467, 1)
+volumetric_fog_sky_affect = 0.609
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_12qqh")
+mesh = SubResource("SphereMesh_7yd40")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.34085, 0, 0, 0, 0.88794, 0, 0, 0, 14.6702, -8.1444, 1.62315, 0)
+material_override = ExtResource("2_wxunr")
+mesh = SubResource("BoxMesh_j1fy8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_y62dw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.650893, 0.759169, 0, -0.759169, 0.650893, -7.90984, 8.60973, 6.19609)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pvr26")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.148655, 0.988889, 0, -0.988889, 0.148655, 0, 0, 0)
+
+[node name="FogVolume" type="FogVolume" parent="."]

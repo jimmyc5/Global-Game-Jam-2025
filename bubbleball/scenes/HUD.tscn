@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://cibe2g5qbn53p"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_lo5y4"]
+[ext_resource type="Shader" path="res://assets/shaders/vignette_shader.gdshader" id="1_vie2o"]
+[ext_resource type="Theme" uid="uid://bmvf1xw0j8v56" path="res://assets/fonts/text_back.tres" id="2_m418s"]
+[ext_resource type="Theme" uid="uid://ci23fbpwtupdm" path="res://assets/fonts/text_front.tres" id="3_nkr56"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jnh2b"]
+shader = ExtResource("1_vie2o")
+shader_parameter/inner_radius = 0.35
+shader_parameter/outer_radius = 0.86
+shader_parameter/vignette_strength = 1.0
+shader_parameter/dither_strength = 0.1
+shader_parameter/vignette_color = Color(0.00945203, 0.0621653, 0.105419, 1)
+
+[node name="Hud" type="Node3D"]
+script = ExtResource("1_lo5y4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="vignette" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_jnh2b")
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="level" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -18.0
+offset_top = 505.0
+offset_right = -18.0
+offset_bottom = 505.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/level"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 262.0
+offset_bottom = 131.0
+theme = ExtResource("2_m418s")
+theme_override_font_sizes/normal_font_size = 50
+text = " level"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/level"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 291.0
+offset_bottom = 128.0
+theme = ExtResource("3_nkr56")
+theme_override_font_sizes/normal_font_size = 50
+text = " level "
+scroll_active = false
+
+[node name="Control" type="Control" parent="CanvasLayer/level"]
+anchors_preset = 0
+offset_left = 145.0
+offset_right = 185.0
+offset_bottom = 40.0
+
+[node name="level_count" type="RichTextLabel" parent="CanvasLayer/level/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 563.0
+offset_bottom = 187.0
+theme = ExtResource("2_m418s")
+theme_override_font_sizes/normal_font_size = 50
+text = " 0"
+scroll_active = false
+
+[node name="level_count2" type="RichTextLabel" parent="CanvasLayer/level/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 978.0
+offset_bottom = 205.0
+theme = ExtResource("3_nkr56")
+theme_override_font_sizes/normal_font_size = 50
+text = " 0"
+scroll_active = false
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)

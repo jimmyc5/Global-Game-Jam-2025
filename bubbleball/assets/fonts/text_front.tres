@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ci23fbpwtupdm"]
+
+[ext_resource type="FontFile" uid="uid://cejfif7murtd0" path="res://assets/fonts/Modak-Regular.ttf" id="1_jnrfa"]
+
+[resource]
+default_font = ExtResource("1_jnrfa")
+default_font_size = 40
+MenuButton/colors/font_color = Color(1, 1, 1, 1)
+MenuButton/colors/font_hover_color = Color(0.894396, 0.777354, 0.892604, 1)
+MenuButton/colors/font_outline_color = Color(0, 0, 0, 1)
+MenuButton/colors/font_pressed_color = Color(1, 1, 1, 1)
+MenuButton/constants/outline_size = 10
+RichTextLabel/colors/default_color = Color(0.97468, 0.945824, 0.974334, 1)
+RichTextLabel/colors/font_outline_color = Color(0.288387, 0.711669, 0.737679, 1)
+RichTextLabel/constants/outline_size = 20

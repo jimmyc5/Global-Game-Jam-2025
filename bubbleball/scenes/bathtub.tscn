@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://bu8lnkcq2t54t"]
+
+[ext_resource type="Script" path="res://scripts/bathtub.gd" id="1_l7322"]
+[ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="1_y8pej"]
+[ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="2_pm7ra"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qn4kc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_48tq4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pupxf"]
+noise_type = 2
+frequency = 0.0196
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k4t7x"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_pupxf")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sxkrg"]
+noise_type = 2
+frequency = 0.0171
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d1gq0"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_sxkrg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4r2t"]
+render_priority = 0
+shader = ExtResource("2_pm7ra")
+shader_parameter/color = Color(0.231547, 0.429704, 0.634422, 1)
+shader_parameter/roughness = 0.35
+shader_parameter/normalmap_a_strength = 0.6
+shader_parameter/normalmap_b_strength = 0.4
+shader_parameter/movement_direction = Vector2(0.1, 0.1)
+shader_parameter/movement_strength = 0.5
+shader_parameter/uv_scale = 1.0
+shader_parameter/normalmap_a = SubResource("NoiseTexture2D_k4t7x")
+shader_parameter/normalmap_b = SubResource("NoiseTexture2D_d1gq0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_soic0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5op67"]
+
+[node name="Bathtub" type="Node3D"]
+script = ExtResource("1_l7322")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.12074, 0, 0, 0, 0.316434, 0, 0, 0, 3.23192, 0, 0, 0)
+material_override = ExtResource("1_y8pej")
+mesh = SubResource("BoxMesh_qn4kc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_48tq4")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.56398, 0, 0, 0, 2.00886, 0, 0, 0, 0.520893, -0.0268383, 0.846868, 1.88376)
+material_override = ExtResource("1_y8pej")
+mesh = SubResource("BoxMesh_qn4kc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D"]
+shape = SubResource("BoxShape3D_48tq4")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.53893, 0, 0, 0, 2.00542, 0, 0, 0, 0.52, -0.0119004, 0.825049, -1.85968)
+material_override = ExtResource("1_y8pej")
+mesh = SubResource("BoxMesh_qn4kc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D"]
+shape = SubResource("BoxShape3D_48tq4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.739744, 0, 0, 0, 2.04561, 0, 0, 0, 3.23192, -2.93872, 0.819015, 0)
+material_override = ExtResource("1_y8pej")
+mesh = SubResource("BoxMesh_qn4kc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("BoxShape3D_48tq4")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.739744, 0, 0, 0, 2.04561, 0, 0, 0, 3.23192, 2.88254, 0.813944, 0)
+material_override = ExtResource("1_y8pej")
+mesh = SubResource("BoxMesh_qn4kc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
+shape = SubResource("BoxShape3D_48tq4")
+
+[node name="water" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.57577, 0, 0, 0, 0.998269, 0, 0, 0, 1.63173, 0, 1.23876, 0)
+material_override = SubResource("ShaderMaterial_v4r2t")
+mesh = SubResource("PlaneMesh_soic0")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(4.89924, 0, 0, 0, 0.889837, 0, 0, 0, 2.96778, 0, 0.713697, 0)
+shape = SubResource("BoxShape3D_5op67")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://001fx7ykfxf7"]
+
+[ext_resource type="Shader" path="res://assets/shaders/skybox.gdshader" id="1_f5dg0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ppqg"]
+shader = ExtResource("1_f5dg0")
+shader_parameter/sky_color = Color(0.389732, 0.825184, 0.901184, 1)
+shader_parameter/horizon_color = Color(0.984314, 0.639216, 0.709804, 1)
+
+[sub_resource type="Sky" id="Sky_0hbhr"]
+sky_material = SubResource("ShaderMaterial_8ppqg")
+
+[sub_resource type="Environment" id="Environment_7rbie"]
+background_mode = 2
+sky = SubResource("Sky_0hbhr")
+ambient_light_source = 3
+fog_light_color = Color(0.874733, 0.887588, 0.907796, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1737
+volumetric_fog_albedo = Color(1, 0.739239, 0.985467, 1)
+volumetric_fog_sky_affect = 0.609
+
+[node name="LevelBase" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7rbie")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.148655, 0.988889, 0, -0.988889, 0.148655, 0, 0, 0)

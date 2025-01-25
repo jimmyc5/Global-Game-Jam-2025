@@ -1,0 +1,586 @@
+[gd_scene load_steps=11 format=3 uid="uid://dd8q36c34sr7y"]
+
+[ext_resource type="Theme" uid="uid://bmvf1xw0j8v56" path="res://assets/fonts/text_back.tres" id="1_scrr5"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_u51ic"]
+[ext_resource type="Theme" uid="uid://ci23fbpwtupdm" path="res://assets/fonts/text_front.tres" id="2_ecjmw"]
+[ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="2_p47gu"]
+[ext_resource type="PackedScene" uid="uid://1kngheu81sks" path="res://scenes/bubble.tscn" id="3_2e5md"]
+[ext_resource type="Script" path="res://scripts/slight_rotate.gd" id="4_e6yb0"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhtsl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nd5sk"]
+
+[sub_resource type="Environment" id="Environment_48fgt"]
+ambient_light_source = 3
+ambient_light_color = Color(0.883378, 0.883378, 0.883378, 1)
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(1, 0.505882, 1, 1)
+
+[sub_resource type="FogMaterial" id="FogMaterial_smbk3"]
+albedo = Color(1, 0.85098, 1, 1)
+
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_u51ic")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="title" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -19.0
+offset_top = 14.0
+offset_right = 21.0
+offset_bottom = 54.0
+
+[node name="SUPER" type="Control" parent="CanvasLayer/title"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="S" type="Control" parent="CanvasLayer/title/SUPER"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/SUPER/S"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 978.0
+offset_bottom = 205.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " S"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/S"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 978.0
+offset_bottom = 205.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " S"
+scroll_active = false
+
+[node name="U" type="Control" parent="CanvasLayer/title/SUPER"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 72.0
+offset_right = 72.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/SUPER/U"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " U"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/U"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " U"
+scroll_active = false
+
+[node name="P" type="Control" parent="CanvasLayer/title/SUPER"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 146.0
+offset_right = 146.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/SUPER/P"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " P"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/P"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " P"
+scroll_active = false
+
+[node name="E" type="Control" parent="CanvasLayer/title/SUPER"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 222.0
+offset_right = 222.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/SUPER/E"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " E
+"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/E"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " E
+"
+scroll_active = false
+
+[node name="R" type="Control" parent="CanvasLayer/title/SUPER"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 292.0
+offset_right = 292.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/SUPER/R"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " R
+"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/R"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " R
+"
+scroll_active = false
+
+[node name="BUBBLE" type="Control" parent="CanvasLayer/title"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 385.0
+offset_right = 425.0
+offset_bottom = 40.0
+
+[node name="B" type="Control" parent="CanvasLayer/title/BUBBLE"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 978.0
+offset_bottom = 204.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " B"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 978.0
+offset_bottom = 205.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " B"
+scroll_active = false
+
+[node name="U" type="Control" parent="CanvasLayer/title/BUBBLE"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 72.0
+offset_right = 72.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/U"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " U"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/U"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " U"
+scroll_active = false
+
+[node name="B2" type="Control" parent="CanvasLayer/title/BUBBLE"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 146.0
+offset_right = 146.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B2"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " B"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B2"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " B"
+scroll_active = false
+
+[node name="B3" type="Control" parent="CanvasLayer/title/BUBBLE"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 222.0
+offset_right = 222.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B3"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " B"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B3"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " B"
+scroll_active = false
+
+[node name="L" type="Control" parent="CanvasLayer/title/BUBBLE"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 292.0
+offset_right = 292.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/L"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " L"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/L"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " L"
+scroll_active = false
+
+[node name="E" type="Control" parent="CanvasLayer/title/BUBBLE"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 356.0
+offset_right = 356.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/E"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " E"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/E"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " E"
+scroll_active = false
+
+[node name="BATH" type="Control" parent="CanvasLayer/title"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 142.0
+offset_top = 103.0
+offset_right = 182.0
+offset_bottom = 143.0
+
+[node name="B" type="Control" parent="CanvasLayer/title/BATH"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BATH/B"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 978.0
+offset_bottom = 204.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " B"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BATH/B"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 978.0
+offset_bottom = 205.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " B"
+scroll_active = false
+
+[node name="A" type="Control" parent="CanvasLayer/title/BATH"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 72.0
+offset_right = 72.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BATH/A"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " A"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BATH/A"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " A"
+scroll_active = false
+
+[node name="T" type="Control" parent="CanvasLayer/title/BATH"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 146.0
+offset_right = 146.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BATH/T"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " T"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BATH/T"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " T"
+scroll_active = false
+
+[node name="H" type="Control" parent="CanvasLayer/title/BATH"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 222.0
+offset_right = 222.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BATH/H"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " H"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BATH/H"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " H"
+scroll_active = false
+
+[node name="3D" type="Control" parent="CanvasLayer/title"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 489.0
+offset_top = 103.0
+offset_right = 529.0
+offset_bottom = 143.0
+
+[node name="3" type="Control" parent="CanvasLayer/title/3D"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/3D/3"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 978.0
+offset_bottom = 204.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " 3"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/3D/3"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 978.0
+offset_bottom = 205.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " 3"
+scroll_active = false
+
+[node name="D" type="Control" parent="CanvasLayer/title/3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 72.0
+offset_right = 72.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/3D/D"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 52.0
+offset_right = 157.0
+offset_bottom = 175.0
+theme = ExtResource("1_scrr5")
+theme_override_font_sizes/normal_font_size = 100
+text = " D"
+scroll_active = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/3D/D"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 151.0
+offset_bottom = 178.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/normal_font_size = 100
+text = " D"
+scroll_active = false
+
+[node name="Button" type="MenuButton" parent="CanvasLayer"]
+offset_left = 110.0
+offset_top = 425.0
+offset_right = 346.0
+offset_bottom = 494.0
+theme = ExtResource("2_ecjmw")
+theme_type_variation = &"FlatMenuButton"
+text = "get bubbling"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(56.8086, 0, 0, 0, 0.88794, 0, 0, 0, 45.9666, -17.3914, 1.62315, -11.3947)
+material_override = ExtResource("2_p47gu")
+mesh = SubResource("BoxMesh_bhtsl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_nd5sk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_48fgt")
+
+[node name="Bubble" parent="." instance=ExtResource("3_2e5md")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3727, 2.82587, -10.0928)
+script = ExtResource("4_e6yb0")
+
+[node name="Camera3D" type="Camera3D" parent="Bubble"]
+transform = Transform3D(0.999997, -0.00182733, 0.00146767, -0.000372432, 0.494357, 0.869259, -0.00231398, -0.869257, 0.494355, -2.02874, 4.04808, 1.54395)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0015, 6.13234, -7.75845)
+light_color = Color(0.986618, 0.835148, 0.843505, 1)
+light_energy = 8.0
+omni_range = 17.8325
+
+[node name="Bubble2" parent="." instance=ExtResource("3_2e5md")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7462, 2.76015, -9.78063)
+
+[node name="Bubble3" parent="." instance=ExtResource("3_2e5md")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -14.3779, 2.76015, -10.9852)
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(23.428, 0, 0, 0, 1, 0, 0, 0, 19.1688, -15.8376, 1.95403, -7.85536)
+size = Vector3(2, 2, 2.37646)
+material = SubResource("FogMaterial_smbk3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.997988, 0.00350926, 0.063303, -0.0634002, 0.0552397, 0.996458, -7.45058e-09, -0.998467, 0.055351, 0, 0, 0)
+
+[connection signal="button_down" from="CanvasLayer/Button" to="." method="_on_button_button_down"]
