@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b53ltat52xg5b"]
 
 [ext_resource type="Script" path="res://scripts/bubble.gd" id="1_15whe"]
-[ext_resource type="Material" uid="uid://bb7ephw1iaxat" path="res://assets/material/bubble_material.tres" id="2_e6vv3"]
+[ext_resource type="Material" uid="uid://dxe51n57dopte" path="res://assets/material/bubble_material.tres" id="2_e6vv3"]
 [ext_resource type="Script" path="res://scripts/PlayerGroundCheck.gd" id="3_xlryd"]
 [ext_resource type="Script" path="res://scripts/camera_pivot.gd" id="3_yn6hj"]
 
@@ -20,7 +20,8 @@ radius = 0.44
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_15whe")
-move_speed = 10000.0
+move_speed = 500.0
+acceleration = 8.0
 
 [node name="Bubble" type="RigidBody3D" parent="."]
 unique_name_in_owner = true

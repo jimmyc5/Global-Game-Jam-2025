@@ -11,6 +11,7 @@ extends Node3D
 @export var jump_impulse := 6.0
 @export var jump_buffer := 300
 @export var coyote_time := 200
+@export var nuetral_stick_influence := 0.2
 
 var lastTimeOnFloor := 0
 var lastJumpInputTime := 0
@@ -44,8 +45,6 @@ func _ready() -> void:
 func get_input():
 	move_vector = Vector3.ZERO
 
-	
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	get_input()
@@ -74,15 +73,20 @@ func _physics_process(delta: float) -> void:
 	move_direction.y = 0.0
 	move_direction = move_direction.normalized()
 	
-	if move_direction:
-		var y_velocity := bubble.linear_velocity.y
-		var xz_velocity := bubble.linear_velocity;
-		xz_velocity.y = 0;
-		var newVelocity = xz_velocity.move_toward(move_direction * move_speed, acceleration * delta)
-		newVelocity.y = y_velocity #+ _gravity * delta
-		var computedVelocity = (newVelocity - bubble.linear_velocity) * bubble.mass / delta
-		bubble.apply_central_force(computedVelocity)
-		bubble.apply_torque(Vector3(0,1,0).cross(computedVelocity) / 4)
+	
+	var accelerationMultiplier = 1
+
+	if not move_direction:
+		accelerationMultiplier = nuetral_stick_influence;
+	
+	var y_velocity := bubble.linear_velocity.y
+	var xz_velocity := bubble.linear_velocity;
+	xz_velocity.y = 0;
+	var newVelocity = xz_velocity.move_toward(move_direction * move_speed, acceleration * delta * accelerationMultiplier)
+	newVelocity.y = y_velocity #+ _gravity * delta
+	var computedVelocity = (newVelocity - bubble.linear_velocity) * bubble.mass / delta
+	bubble.apply_central_force(computedVelocity)
+	bubble.apply_torque(Vector3(0,1,0).cross(computedVelocity) / 4)
 
 	# handle jumping
 	

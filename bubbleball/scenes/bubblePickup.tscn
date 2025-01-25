@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cks515urplypv"]
 
 [ext_resource type="Script" path="res://scripts/bubble_pickup.gd" id="1_yk8ly"]
-[ext_resource type="Material" uid="uid://bb7ephw1iaxat" path="res://assets/material/bubble_material.tres" id="2_0x8x0"]
+[ext_resource type="Material" uid="uid://dxe51n57dopte" path="res://assets/material/bubble_material.tres" id="2_0x8x0"]
 [ext_resource type="Script" path="res://scripts/PlayerGroundCheck.gd" id="3_v73aq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qtxmp"]
