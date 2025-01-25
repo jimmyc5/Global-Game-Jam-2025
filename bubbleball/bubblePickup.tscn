@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://cks515urplypv"]
+
+[ext_resource type="Texture2D" uid="uid://ddv1xksxvxit7" path="res://assets/images/bubble.png" id="1_6appq"]
+[ext_resource type="Script" path="res://bubble_pickup.gd" id="1_yk8ly"]
+[ext_resource type="Script" path="res://scenes/PlayerGroundCheck.gd" id="3_y16q3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qtxmp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5ibh"]
+transparency = 1
+albedo_texture = ExtResource("1_6appq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_e1pbh"]
+radial_segments = 20
+rings = 10
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_57w71"]
+radius = 0.44
+
+[node name="Area3D" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08497, 0)
+script = ExtResource("1_yk8ly")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qtxmp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_p5ibh")
+mesh = SubResource("SphereMesh_e1pbh")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="." node_paths=PackedStringArray("followHitbox")]
+shape = SubResource("SphereShape3D_57w71")
+target_position = Vector3(0, -0.255, 0)
+script = ExtResource("3_y16q3")
+followHitbox = NodePath("../CollisionShape3D")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
