@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://bny03g6lgrc4s"]
 
-[ext_resource type="PackedScene" uid="uid://nmd6srv6hqrl" path="res://scenes/level_base.tscn" id="1_ddwkw"]
-[ext_resource type="PackedScene" uid="uid://b53ltat52xg5b" path="res://scenes/player.tscn" id="2_n74ic"]
-[ext_resource type="PackedScene" uid="uid://bu8lnkcq2t54t" path="res://scenes/bathtub.tscn" id="3_j3lns"]
-[ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="4_mpjk1"]
-[ext_resource type="PackedScene" uid="uid://cks515urplypv" path="res://scenes/bubblePickup.tscn" id="5_1cnfy"]
-[ext_resource type="PackedScene" uid="uid://cnf4v6x6thsi1" path="res://scenes/deathbox.tscn" id="6_c1oa0"]
+[ext_resource type="PackedScene" uid="uid://nmd6srv6hqrl" path="res://scenes/level_base.tscn" id="1_xoua2"]
+[ext_resource type="PackedScene" uid="uid://b53ltat52xg5b" path="res://scenes/player.tscn" id="2_c17ey"]
+[ext_resource type="PackedScene" uid="uid://bu8lnkcq2t54t" path="res://scenes/bathtub.tscn" id="3_vfdvr"]
+[ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="4_detnf"]
+[ext_resource type="PackedScene" uid="uid://cks515urplypv" path="res://scenes/bubblePickup.tscn" id="5_6h63w"]
+[ext_resource type="PackedScene" uid="uid://cnf4v6x6thsi1" path="res://scenes/deathbox.tscn" id="6_7i860"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4v2o1"]
 
@@ -25,14 +25,14 @@ data = PackedVector3Array(-0.088, 0, -0.8937, 0, 0.0099, -0.899, 0, 0, -0.898, -
 
 [node name="Level0" type="Node3D"]
 
-[node name="LevelBase" parent="." instance=ExtResource("1_ddwkw")]
+[node name="LevelBase" parent="." instance=ExtResource("1_xoua2")]
 bubble_count = 21
 time_limit = 55
 
-[node name="Player" parent="." instance=ExtResource("2_n74ic")]
+[node name="Player" parent="." instance=ExtResource("2_c17ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100786, 0.783318, 0.183569)
 
-[node name="Bathtub" parent="." instance=ExtResource("3_j3lns")]
+[node name="Bathtub" parent="." instance=ExtResource("3_vfdvr")]
 transform = Transform3D(1.80636, 0, 4.03736, 0, 1.49025, 0, -3.03538, 0, 2.40264, 0.763911, -28.8086, -28.3071)
 
 [node name="Ground" type="Node3D" parent="."]
@@ -41,7 +41,7 @@ transform = Transform3D(1.80636, 0, 4.03736, 0, 1.49025, 0, -3.03538, 0, 2.40264
 
 [node name="main_platform" type="MeshInstance3D" parent="Ground/platform"]
 transform = Transform3D(8.88066, 0, 0, 0, 19.1483, 0, 0, 0, 5.19854, -0.0492144, -9.43882, 0.940012)
-material_override = ExtResource("4_mpjk1")
+material_override = ExtResource("4_detnf")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../../..")
 
@@ -52,7 +52,7 @@ shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Ground/platform"]
 transform = Transform3D(2.55632, 0, 0, 0, 2.82663, 0, 0, 0, 0.615735, 3.17347, -0.788847, -1.78842)
-material_override = ExtResource("4_mpjk1")
+material_override = ExtResource("4_detnf")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../../..")
 
@@ -63,7 +63,7 @@ shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Ground/platform"]
 transform = Transform3D(2.55632, 0, 0, 0, 2.82663, 0, 0, 0, 0.615735, -3.32624, -0.788847, -1.78842)
-material_override = ExtResource("4_mpjk1")
+material_override = ExtResource("4_detnf")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../../..")
 
@@ -74,7 +74,7 @@ shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="Ground/platform"]
 transform = Transform3D(8.7982, 0, 0, 0, 2.80405, 0, 0, 0, 0.615735, -0.19137, -0.788847, 3.48507)
-material_override = ExtResource("4_mpjk1")
+material_override = ExtResource("4_detnf")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../../..")
 metadata/_edit_group_ = true
@@ -86,7 +86,7 @@ shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="Ground/platform"]
 transform = Transform3D(-2.63549e-07, 0, 0.615735, 0, 2.80405, 0, -6.0293, 0, -2.69146e-08, -4.72287, -0.788847, 0.831511)
-material_override = ExtResource("4_mpjk1")
+material_override = ExtResource("4_detnf")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../../..")
 metadata/_edit_group_ = true
@@ -98,7 +98,7 @@ shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="Ground/platform"]
 transform = Transform3D(-2.63549e-07, 0, 0.615735, 0, 2.80405, 0, -6.0293, 0, -2.69146e-08, 4.39141, -0.777059, 0.844227)
-material_override = ExtResource("4_mpjk1")
+material_override = ExtResource("4_detnf")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../../..")
 metadata/_edit_group_ = true
@@ -113,7 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.116517, -11.0766, 14.6516)
 
 [node name="floor" type="MeshInstance3D" parent="Ground/stage_2"]
 transform = Transform3D(20, 0, 3.01992e-06, 0, 0.0360588, 0, -3.01992e-06, 0, 20, 0.0603159, 5.68625, -38.9398)
-material_override = ExtResource("4_mpjk1")
+material_override = ExtResource("4_detnf")
 mesh = SubResource("TorusMesh_bflnv")
 skeleton = NodePath("../../..")
 
@@ -124,7 +124,7 @@ shape = SubResource("ConcavePolygonShape3D_gmggr")
 
 [node name="wall" type="MeshInstance3D" parent="Ground/stage_2"]
 transform = Transform3D(20, 0, 0, 0, 11.602, 0, 0, 0, 20, 0.0589502, 5.70384, -38.9507)
-material_override = ExtResource("4_mpjk1")
+material_override = ExtResource("4_detnf")
 mesh = SubResource("TorusMesh_i2nde")
 skeleton = NodePath("../../..")
 
@@ -133,68 +133,68 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/stage_2/wall/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fmuw4")
 
-[node name="BubblePickup" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.23544, 6.81933, -25.6686)
 
-[node name="BubblePickup6" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup6" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86827, 6.78191, -31.3911)
 
-[node name="BubblePickup7" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup7" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34495, 6.71388, -27.0499)
 
-[node name="BubblePickup2" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup2" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6801, 6.88677, -42.817)
 
-[node name="BubblePickup3" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup3" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9167, 6.89859, -47.5426)
 
-[node name="BubblePickup4" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup4" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00354, 6.75704, -37.3799)
 
-[node name="BubblePickup5" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup5" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.09115, 6.87892, -50.6965)
 
-[node name="BubblePickup8" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup8" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.920396, 0, 0.390988, 0, 1, 0, -0.390988, 0, 0.920396, -2.1289, 6.81933, -24.2629)
 
-[node name="BubblePickup9" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup9" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.920396, 0, 0.390988, 0, 1, 0, -0.390988, 0, 0.920396, -6.78957, 6.78191, -28.5004)
 
-[node name="BubblePickup10" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup10" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.920396, 0, 0.390988, 0, 1, 0, -0.390988, 0, 0.920396, 10.7508, 6.71388, -31.235)
 
-[node name="BubblePickup11" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup11" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.920396, 0, 0.390988, 0, 1, 0, -0.390988, 0, 0.920396, -13.845, 6.88677, -37.9174)
 
-[node name="BubblePickup12" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup12" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.920396, 0, 0.390988, 0, 1, 0, -0.390988, 0, 0.920396, 6.02578, 6.89859, -51.4929)
 
-[node name="BubblePickup13" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup13" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.920396, 0, 0.390988, 0, 1, 0, -0.390988, 0, 0.920396, 8.23841, 6.75704, -41.3912)
 
-[node name="BubblePickup14" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup14" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.920396, 0, 0.390988, 0, 1, 0, -0.390988, 0, 0.920396, -10.8613, 6.87892, -47.7459)
 
-[node name="BubblePickup15" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup15" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.573047, 0, 0.819522, 0, 1, 0, -0.819522, 0, 0.573047, 5.03004, 6.81933, -25.8012)
 
-[node name="BubblePickup16" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup16" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.573047, 0, 0.819522, 0, 1, 0, -0.819522, 0, 0.573047, -1.16841, 6.78191, -26.9228)
 
-[node name="BubblePickup17" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup17" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.573047, 0, 0.819522, 0, 1, 0, -0.819522, 0, 0.573047, 12.2533, 6.71388, -38.5417)
 
-[node name="BubblePickup18" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup18" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.573047, 0, 0.819522, 0, 1, 0, -0.819522, 0, 0.573047, -12.1435, 6.88677, -31.166)
 
-[node name="BubblePickup19" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup19" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.573047, 0, 0.819522, 0, 1, 0, -0.819522, 0, 0.573047, -2.49415, 6.89859, -53.2121)
 
-[node name="BubblePickup20" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup20" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.573047, 0, 0.819522, 0, 1, 0, -0.819522, 0, 0.573047, 4.73808, 6.75704, -45.8205)
 
-[node name="BubblePickup21" parent="Ground/stage_2" instance=ExtResource("5_1cnfy")]
+[node name="BubblePickup21" parent="Ground/stage_2" instance=ExtResource("5_6h63w")]
 transform = Transform3D(0.573047, 0, 0.819522, 0, 1, 0, -0.819522, 0, 0.573047, -14.8251, 6.87892, -41.0812)
 
-[node name="Deathbox" parent="." instance=ExtResource("6_c1oa0")]
+[node name="Deathbox" parent="." instance=ExtResource("6_7i860")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)

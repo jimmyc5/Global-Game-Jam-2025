@@ -14,6 +14,7 @@ config/name="Super Bubble Bath 3D"
 config/description="it's super monkey ball but with bubbles"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://assets/images/bubble-ui.png"
 
 [autoload]
@@ -103,6 +104,7 @@ pause={
 
 [rendering]
 
+renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.0836262, 0.337808, 0.372219, 1)
 viewport/size/transparent=false

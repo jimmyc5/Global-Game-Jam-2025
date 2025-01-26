@@ -22,7 +22,7 @@ func play_pop_sound(bus = "Effects"):
 	AudioPlayer.play_effect(POP_EFFECTS[index], 0.0, randf_range(0.8, 1.3), 0, bus)
 
 var level_number: int = 0
-var max_level: int = 2
+var max_level: int = 7
 
 var music_disabled: bool = false
 var sfx_disabled: bool = false

@@ -6,7 +6,7 @@
 
 [resource]
 default_font = ExtResource("1_jnrfa")
-default_font_size = 40
+default_font_size = 50
 CheckBox/constants/outline_size = 5
 CheckBox/font_sizes/font_size = 32
 CheckBox/icons/checked = ExtResource("1_4824f")

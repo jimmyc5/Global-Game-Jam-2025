@@ -39,6 +39,7 @@ func unpause_game():
 
 func _on_mainmenu_button_down() -> void:
 	unpause_game()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func _on_restart_button_down() -> void:

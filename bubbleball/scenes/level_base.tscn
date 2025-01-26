@@ -29,4 +29,4 @@ environment = SubResource("Environment_7rbie")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.148655, 0.988889, 0, -0.988889, 0.148655, 0, 0, 0)
-light_energy = 2.0
+light_energy = 0.8

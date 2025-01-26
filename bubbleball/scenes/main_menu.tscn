@@ -1,13 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://dd8q36c34sr7y"]
+[gd_scene load_steps=16 format=3 uid="uid://dd8q36c34sr7y"]
 
 [ext_resource type="Theme" uid="uid://bmvf1xw0j8v56" path="res://assets/fonts/text_back.tres" id="1_scrr5"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_u51ic"]
+[ext_resource type="Shader" path="res://assets/shaders/vignette_shader.gdshader" id="2_an3aa"]
 [ext_resource type="Theme" uid="uid://ci23fbpwtupdm" path="res://assets/fonts/text_front.tres" id="2_ecjmw"]
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="2_p47gu"]
 [ext_resource type="PackedScene" uid="uid://1kngheu81sks" path="res://scenes/bubble.tscn" id="3_2e5md"]
 [ext_resource type="Script" path="res://scripts/slight_rotate.gd" id="4_e6yb0"]
 [ext_resource type="Material" uid="uid://friv3a4ut4sw" path="res://assets/material/bubble_material_01.tres" id="7_sn32v"]
 [ext_resource type="Material" uid="uid://bvb8aqkh6sqsg" path="res://assets/material/bubble_material_0.tres" id="8_t3thk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3112c"]
+shader = ExtResource("2_an3aa")
+shader_parameter/inner_radius = -0.63
+shader_parameter/outer_radius = 1.0
+shader_parameter/vignette_strength = 0.71
+shader_parameter/dither_strength = 0.1
+shader_parameter/vignette_color = Color(0.768873, 0.451248, 0.711389, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bhtsl"]
 
@@ -31,6 +40,11 @@ script = ExtResource("1_u51ic")
 letter_texts = [NodePath("CanvasLayer/title/SUPER/S"), NodePath("CanvasLayer/title/SUPER/U"), NodePath("CanvasLayer/title/SUPER/P"), NodePath("CanvasLayer/title/SUPER/E"), NodePath("CanvasLayer/title/SUPER/R"), NodePath("CanvasLayer/title/BUBBLE/B"), NodePath("CanvasLayer/title/BUBBLE/U"), NodePath("CanvasLayer/title/BUBBLE/B2"), NodePath("CanvasLayer/title/BUBBLE/B3"), NodePath("CanvasLayer/title/BUBBLE/L"), NodePath("CanvasLayer/title/BUBBLE/E"), NodePath("CanvasLayer/title/BATH/B"), NodePath("CanvasLayer/title/BATH/A"), NodePath("CanvasLayer/title/BATH/T"), NodePath("CanvasLayer/title/BATH/H"), NodePath("CanvasLayer/title/3D/3"), NodePath("CanvasLayer/title/3D/D")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="vignette" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_3112c")
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="title" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -541,15 +555,15 @@ theme_override_font_sizes/normal_font_size = 100
 text = " D"
 scroll_active = false
 
-[node name="Button" type="MenuButton" parent="CanvasLayer"]
-offset_left = 110.0
-offset_top = 425.0
-offset_right = 346.0
-offset_bottom = 494.0
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 259.0
+offset_top = 377.0
+offset_right = 639.0
+offset_bottom = 461.0
 mouse_default_cursor_shape = 2
 theme = ExtResource("2_ecjmw")
 theme_type_variation = &"FlatMenuButton"
-text = "get bubbling"
+text = "> get bubbling <"
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -598,12 +612,6 @@ script = ExtResource("4_e6yb0")
 [node name="Camera3D" type="Camera3D" parent="Bubble"]
 transform = Transform3D(0.999997, -0.00182733, 0.00146767, -0.000372432, 0.494357, 0.869259, -0.00231398, -0.869257, 0.494355, -2.02874, 4.04808, 1.54395)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0015, 6.13234, -7.75845)
-light_color = Color(0.986618, 0.835148, 0.843505, 1)
-light_energy = 8.0
-omni_range = 17.8325
-
 [node name="Bubble1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7462, 2.76015, -9.78063)
 material_override = ExtResource("7_sn32v")
@@ -623,6 +631,7 @@ material = SubResource("FogMaterial_smbk3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.997988, 0.00350926, 0.063303, -0.0634002, 0.0552397, 0.996458, -7.45058e-09, -0.998467, 0.055351, 0, 0, 0)
+light_energy = 0.7
 
 [connection signal="button_down" from="CanvasLayer/Button" to="." method="_on_button_button_down"]
 [connection signal="mouse_entered" from="CanvasLayer/Button" to="." method="_on_button_mouse_entered"]
