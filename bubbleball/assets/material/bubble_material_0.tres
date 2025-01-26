@@ -11,7 +11,7 @@ noise = SubResource("FastNoiseLite_tbo1v")
 [resource]
 render_priority = 0
 shader = ExtResource("1_3du5y")
-shader_parameter/bubble_color = Color(0.227451, 0.741176, 1, 1)
+shader_parameter/bubble_color = Color(1, 1, 1, 1)
 shader_parameter/height_multiplier = 0.35
 shader_parameter/noise_sample_size = 0.1
 shader_parameter/animation_speed = 0.095
