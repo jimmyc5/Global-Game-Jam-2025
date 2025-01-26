@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://b53ltat52xg5b" path="res://scenes/player.tscn" id="2_4j08u"]
 [ext_resource type="PackedScene" uid="uid://bu8lnkcq2t54t" path="res://scenes/bathtub.tscn" id="3_huoy0"]
 [ext_resource type="PackedScene" uid="uid://cwlfcxp8tvp2l" path="res://scenes/HUD.tscn" id="4_7si5e"]
-[ext_resource type="PackedScene" uid="uid://d2a40a41h2rsk" path="res://scenes/pause_menu.tscn" id="5_3k4rh"]
+[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="5_3k4rh"]
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="6_314bn"]
-[ext_resource type="PackedScene" uid="uid://cnf4v6x6thsi1" path="res://scenes/deathbox.tscn" id="7_fb1rd"]
+[ext_resource type="PackedScene" path="res://scenes/deathbox.tscn" id="7_fb1rd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4v2o1"]
 

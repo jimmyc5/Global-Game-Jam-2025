@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="2_df1di"]
 [ext_resource type="PackedScene" uid="uid://b53ltat52xg5b" path="res://scenes/player.tscn" id="3_xbkol"]
 [ext_resource type="PackedScene" uid="uid://bu8lnkcq2t54t" path="res://scenes/bathtub.tscn" id="4_piski"]
-[ext_resource type="PackedScene" uid="uid://cnf4v6x6thsi1" path="res://scenes/deathbox.tscn" id="7_rbvhw"]
+[ext_resource type="PackedScene" path="res://scenes/deathbox.tscn" id="7_rbvhw"]
 [ext_resource type="FontFile" uid="uid://cejfif7murtd0" path="res://assets/fonts/Modak-Regular.ttf" id="7_vjkal"]
 [ext_resource type="PackedScene" uid="uid://cks515urplypv" path="res://scenes/bubblePickup.tscn" id="8_yx2a0"]
 
@@ -137,7 +137,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D20" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.100525, 2.86326, 0.0668115, -0.42334, 0.495733, -0.383216, -7.64051, -0.0651388, 0.020354, 2.2513, -1.0805, -17.9275)
+transform = Transform3D(-0.100525, 2.86326, 0.0668115, 0.36509, 0.499804, -0.383276, -7.64351, -0.0137837, -0.0191857, 2.2513, -1.0805, -17.9275)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("PrismMesh_vhrg6")
 skeleton = NodePath("../..")
@@ -391,13 +391,6 @@ shape = SubResource("BoxShape3D_icjt1")
 [node name="BubblePickup" parent="." instance=ExtResource("8_yx2a0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114479, -0.955684, -15.0618)
 
-[node name="Label3D3" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -0.166712, 3.28919, 0.122777)
-pixel_size = 0.0166
-double_sided = false
-text = "Use WASD to Move"
-font = ExtResource("7_vjkal")
-
 [node name="Label3D4" type="Label3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.166712, 3.33343, 0)
 pixel_size = 0.0166
@@ -405,9 +398,24 @@ double_sided = false
 text = "Use the Mouse to control the Camera"
 font = ExtResource("7_vjkal")
 
+[node name="Label3D5" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.166712, 2.60586, 0)
+pixel_size = 0.0166
+double_sided = false
+text = "and press Esc to pause"
+font = ExtResource("7_vjkal")
+
 [node name="Label3D2" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0292864, 2.43216, -15.7276)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0292864, 2.9447, -15.7276)
 pixel_size = 0.0166
 text = "Collect the bubbles 
-and head to the bath!"
+and head to the bath
+before the timer runs out!"
+font = ExtResource("7_vjkal")
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -0.166712, 3.28919, 0.122777)
+pixel_size = 0.0166
+double_sided = false
+text = "Use WASD to Move"
 font = ExtResource("7_vjkal")
