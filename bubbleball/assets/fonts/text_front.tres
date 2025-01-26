@@ -1,10 +1,17 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ci23fbpwtupdm"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ci23fbpwtupdm"]
 
+[ext_resource type="Texture2D" uid="uid://cqd0txmb7ndaq" path="res://assets/images/white-box.png" id="1_4824f"]
 [ext_resource type="FontFile" uid="uid://cejfif7murtd0" path="res://assets/fonts/Modak-Regular.ttf" id="1_jnrfa"]
+[ext_resource type="Texture2D" uid="uid://ckj7s54njsnes" path="res://assets/images/gray-box.png" id="2_lcy21"]
 
 [resource]
 default_font = ExtResource("1_jnrfa")
 default_font_size = 40
+CheckBox/constants/outline_size = 5
+CheckBox/font_sizes/font_size = 32
+CheckBox/icons/checked = ExtResource("1_4824f")
+CheckBox/icons/unchecked = ExtResource("2_lcy21")
+Label/constants/outline_size = 5
 MenuButton/colors/font_color = Color(1, 1, 1, 1)
 MenuButton/colors/font_hover_color = Color(0.894396, 0.777354, 0.892604, 1)
 MenuButton/colors/font_outline_color = Color(0, 0, 0, 1)

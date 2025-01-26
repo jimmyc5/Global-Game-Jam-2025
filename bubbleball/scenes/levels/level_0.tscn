@@ -101,6 +101,17 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D13/StaticBody3D"]
 shape = SubResource("BoxShape3D_icjt1")
 
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(3.086, 0, 0, 0, 0.975578, 0.0714792, 0, -0.10104, 0.690159, 0.027761, -2.02868, -28.9625)
+material_override = ExtResource("2_df1di")
+mesh = SubResource("BoxMesh_4v2o1")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D19/StaticBody3D"]
+shape = SubResource("BoxShape3D_icjt1")
+
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(0.562916, -0.1325, 8.68941e-08, 0.324662, 0.229258, 0.297191, -0.0148167, -0.0104627, 6.51199, 1.79725, -1.27137, -23.7798)
 material_override = ExtResource("2_df1di")
@@ -397,7 +408,14 @@ shape = SubResource("BoxShape3D_icjt1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114479, -0.955684, -15.0618)
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.166712, 3.33343, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.166712, 2.76906, -6.14252)
+pixel_size = 0.0166
+text = "Use WASD or left joystick
+to Move"
+font = ExtResource("7_vjkal")
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.166712, 2.27779, 2.05827)
 pixel_size = 0.0166
 double_sided = false
 text = "Use WASD to Move"
@@ -415,4 +433,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0292864, 2.43216, -15.7276)
 pixel_size = 0.0166
 text = "Collect the bubbles 
 and head to the bath!"
+font = ExtResource("7_vjkal")
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(0.786375, 0, 0.61775, 0, 1, 0, -0.61775, 0, 0.786375, -3.94436, -0.201106, -30.7789)
+pixel_size = 0.0166
+text = "Use the spacebar
+or any action button
+on the controller
+to jump"
 font = ExtResource("7_vjkal")

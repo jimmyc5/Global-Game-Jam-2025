@@ -28,6 +28,7 @@ var _camera_input_direction := Vector2.ZERO
 var _gravity := -30.0
 
 var currentBubbleCount = 1;
+var in_da_tub: bool = false
 
 func _input(event: InputEvent) -> void:
 	if not initializing and event.is_action_pressed("ui_cancel"):
@@ -45,7 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Globals.connect("bathtub_entered", set_initializing)
+	Globals.connect("bathtub_entered", rub_a_dub_dub)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var transition_time = 3
 	var tween = get_tree().create_tween()
@@ -68,8 +69,11 @@ func _ready() -> void:
 	).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUINT)
 	tween.finished.connect(done_initializing)
 
-func set_initializing():
+func rub_a_dub_dub():
 	initializing = true
+	in_da_tub = true
+	bubble.sleeping = true
+	bubble.visible = false
 
 func done_initializing():
 	initializing = false
