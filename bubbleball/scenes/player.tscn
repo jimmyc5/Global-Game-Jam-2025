@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="6_528yr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0237i"]
-friction = 0.2
+friction = 0.0
 bounce = 0.61
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ocy83"]
@@ -50,7 +50,6 @@ followHitbox = NodePath("../Bubble/CollisionShape3D")
 
 [node name="CameraPivot" type="Node3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("3_yn6hj")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]

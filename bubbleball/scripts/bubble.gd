@@ -27,6 +27,8 @@ var move_vector: Vector3 = Vector3.ZERO
 var _camera_input_direction := Vector2.ZERO
 var _gravity := -30.0
 
+var currentBubbleCount = 1;
+
 func _input(event: InputEvent) -> void:
 	if not initializing and event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -86,6 +88,7 @@ func _process(_delta: float) -> void:
 	
 func is_on_floor():
 	var casts = find_children("*", "ShapeCast3D", false, false)
+	currentBubbleCount = casts.size();
 	for cast in casts:
 		cast.force_shapecast_update();
 		if cast.get_collision_count() > 0:
@@ -138,7 +141,7 @@ func _physics_process(delta: float) -> void:
 	newVelocity.y = y_velocity #+ _gravity * delta
 	var computedVelocity = (newVelocity - bubble.linear_velocity) * bubble.mass / delta
 	bubble.apply_central_force(computedVelocity)
-	bubble.apply_torque(Vector3(0,1,0).cross(computedVelocity) / 4)
+	#bubble.apply_torque(Vector3(0,1,0).cross(computedVelocity) / 4)
 
 	# handle jumping
 	

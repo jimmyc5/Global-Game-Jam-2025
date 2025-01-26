@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://nmd6srv6hqrl" path="res://scenes/level_base.tscn" id="1_ushgc"]
 [ext_resource type="PackedScene" uid="uid://b53ltat52xg5b" path="res://scenes/player.tscn" id="2_liu2d"]
-[ext_resource type="PackedScene" uid="uid://co7xiw67xxxfw" path="res://scenes/bathtub.tscn" id="3_uafet"]
+[ext_resource type="PackedScene" uid="uid://bu8lnkcq2t54t" path="res://scenes/bathtub.tscn" id="3_uafet"]
 [ext_resource type="PackedScene" uid="uid://cwlfcxp8tvp2l" path="res://scenes/HUD.tscn" id="4_4er5p"]
 [ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="5_2hadk"]
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="6_bblwr"]
@@ -21,7 +21,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100786, 0.783318, 0.183569)
 
 [node name="Bathtub" parent="." instance=ExtResource("3_uafet")]
-transform = Transform3D(1.00006, 0, 0, 0, 1.00006, 0, 0, 0, 1.00006, 0.17941, -0.536427, -25.5774)
+transform = Transform3D(1.00006, 0, 0, 0, 1.00006, 0, 0, 0, 1.00006, 0.17941, -0.765697, -25.5774)
 
 [node name="Hud" parent="." instance=ExtResource("4_4er5p")]
 
@@ -30,7 +30,7 @@ transform = Transform3D(1.00006, 0, 0, 0, 1.00006, 0, 0, 0, 1.00006, 0.17941, -0
 [node name="Ground" type="Node3D" parent="."]
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(5.12074, 0, 0, 0, 0.316434, 0, 0, 0, 28.8114, 0, 0, -9.5354)
+transform = Transform3D(5.12073, -0.000452041, 0.0211086, 0.00731512, 0.316434, 0.000806679, -0.0037519, -8.52282e-06, 28.8114, -0.00148815, 0.000383735, -9.53563)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -41,7 +41,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(4.76492, 0.115896, 0, -1.87551, 0.294446, 0, 0, 0, 28.8114, -0.895853, 0, -9.5354)
+transform = Transform3D(4.76759, 0.115475, 0.0211086, -1.8687, 0.294611, 0.000806679, -0.00344068, -9.28462e-05, 28.8114, -0.89734, -0.000896007, -9.53497)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -52,7 +52,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(4.07547, 0.191588, 0, -3.10041, 0.251842, 0, 0, 0, 28.8114, -1.69755, 0, -9.5354)
+transform = Transform3D(4.07989, 0.191228, 0.0211086, -3.09458, 0.252115, 0.000806679, -0.00290254, -0.000147157, 28.8114, -2.1198, 0.317103, -9.53408)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -63,7 +63,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1.34436, 0.191588, 0, -1.02272, 0.251842, 0, 0, 0, 4.36955, -3.00794, 0.996874, -26.1039)
+transform = Transform3D(1.34436, 0.191588, 0, -1.02272, 0.251842, 0, 0, 0, 4.36955, -3.1595, 1.11217, -26.1039)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -74,7 +74,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.236131, 0.316097, 0, -5.11529, -0.0145916, 0, 0, 0, 32.8567, -3.59972, -0.0262613, -11.2899)
+transform = Transform3D(1.70849, 0.298302, 0, -4.82732, 0.105576, 0, 0, 0, 32.8567, -3.31509, 0.11267, -11.2879)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -85,7 +85,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-6.91678e-05, 0.000119818, 7.43078, -5.04977, -0.0186405, 0, 0.233106, -0.403806, 0.00220481, 0.0426049, -1.22441, 5.04001)
+transform = Transform3D(0.00731546, -0.000149401, 8.31478, -5.04976, -0.0186516, 0.011878, 0.233242, -0.403805, -0.00362504, -0.208067, -1.22393, 5.0399)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -96,7 +96,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-6.91678e-05, 0.000119818, 7.43078, -5.04977, -0.0186405, 0, 0.233106, -0.403806, 0.00220481, 0.0426049, -1.47922, -5.1388)
+transform = Transform3D(0.00731546, -0.000149401, 7.43077, -5.04976, -0.0186516, 0.0106151, 0.233242, -0.403805, -0.00323963, 0.046451, -1.47865, -5.13902)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -107,7 +107,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-6.91678e-05, 0.000119818, 7.43078, -5.04977, -0.0186405, 0, 0.233106, -0.403806, 0.00220481, 0.0426049, -1.46462, -16.0624)
+transform = Transform3D(0.00731546, -0.000149401, 7.43077, -5.04976, -0.0186516, 0.0106151, 0.233242, -0.403805, -0.00323963, 0.038427, -1.46436, -16.0626)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -151,7 +151,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.48315, -0.315022, 0, 5.0979, -0.0298561, 0, 0, 0, 32.5008, 3.72444, 0.195682, -11.2332)
+transform = Transform3D(1.74797, -0.297427, 0.0238116, 4.81317, 0.108015, 0.000909977, -0.00141531, 0.000214885, 32.5008, 3.39919, 0.740837, -11.2359)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -161,8 +161,30 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D6/StaticBody3D"]
 shape = SubResource("BoxShape3D_icjt1")
 
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.378586, -0.315568, 0.0238116, 5.10673, -0.0233946, 0.000909977, 0.000134481, 0.000231855, 32.5008, 4.13715, 0.691916, -11.2365)
+material_override = ExtResource("6_bblwr")
+mesh = SubResource("BoxMesh_4v2o1")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D15"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D15/StaticBody3D"]
+shape = SubResource("BoxShape3D_icjt1")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(0.512606, -0.314844, 0.0238116, 5.09502, 0.0316761, 0.000909977, -0.000518121, 0.000229783, 32.5008, -4.2465, 0.529611, -11.0233)
+material_override = ExtResource("6_bblwr")
+mesh = SubResource("BoxMesh_4v2o1")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D16/StaticBody3D"]
+shape = SubResource("BoxShape3D_icjt1")
+
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(7.38081, 0, 0, 0, 1.79415, 0, 0, 0, 0.765799, 0.0366217, 2.23074, -27.8354)
+transform = Transform3D(8.38749, 0, 0, 0, 2.10846, 0, 0, 0, 1.02319, 0.0366217, 1.83179, -27.8354)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -174,6 +196,9 @@ shape = SubResource("BoxShape3D_icjt1")
 
 [node name="BubblePickup" parent="Ground" instance=ExtResource("7_a2v4t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0941106, 0.726516, -11.3769)
+
+[node name="BubblePickup2" parent="Ground" instance=ExtResource("7_a2v4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0941106, 0.726516, -20.3235)
 
 [node name="Deathbox" parent="." instance=ExtResource("7_3e4jy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
