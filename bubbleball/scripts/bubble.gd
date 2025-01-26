@@ -158,5 +158,8 @@ func _physics_process(delta: float) -> void:
 		lastJumpInputTime = currentTime
 		
 	if currentTime < lastJumpInputTime + jump_buffer && currentTime < lastTimeOnFloor + coyote_time:
-		bubble.apply_central_impulse(Vector3(0, -bubble.linear_velocity.y + jump_impulse, 0))
+		if bubble.linear_velocity.y < 0:
+			bubble.apply_central_impulse(Vector3(0, -bubble.linear_velocity.y + jump_impulse, 0))
+		else:
+			bubble.apply_central_impulse(Vector3(0, jump_impulse, 0))
 		lastJumpInputTime = currentTime - jump_buffer
