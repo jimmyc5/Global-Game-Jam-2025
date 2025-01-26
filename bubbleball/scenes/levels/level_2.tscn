@@ -15,7 +15,7 @@
 
 [node name="LevelBase" parent="." instance=ExtResource("1_ushgc")]
 bubble_count = 2
-time_limit = 6
+time_limit = 10
 
 [node name="Player" parent="." instance=ExtResource("2_liu2d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100786, 0.783318, 0.183569)
