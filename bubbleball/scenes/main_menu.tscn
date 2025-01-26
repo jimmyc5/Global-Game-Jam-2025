@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd8q36c34sr7y"]
+[gd_scene load_steps=14 format=3 uid="uid://dd8q36c34sr7y"]
 
 [ext_resource type="Theme" uid="uid://bmvf1xw0j8v56" path="res://assets/fonts/text_back.tres" id="1_scrr5"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_u51ic"]
@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="2_p47gu"]
 [ext_resource type="PackedScene" uid="uid://1kngheu81sks" path="res://scenes/bubble.tscn" id="3_2e5md"]
 [ext_resource type="Script" path="res://scripts/slight_rotate.gd" id="4_e6yb0"]
+[ext_resource type="Material" uid="uid://friv3a4ut4sw" path="res://assets/material/bubble_material_01.tres" id="7_sn32v"]
+[ext_resource type="Material" uid="uid://bvb8aqkh6sqsg" path="res://assets/material/bubble_material_0.tres" id="8_t3thk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bhtsl"]
 
@@ -17,11 +19,16 @@ ambient_light_color = Color(0.883378, 0.883378, 0.883378, 1)
 volumetric_fog_enabled = true
 volumetric_fog_albedo = Color(1, 0.505882, 1, 1)
 
+[sub_resource type="SphereMesh" id="SphereMesh_jpjcn"]
+radial_segments = 20
+rings = 10
+
 [sub_resource type="FogMaterial" id="FogMaterial_smbk3"]
 albedo = Color(1, 0.85098, 1, 1)
 
-[node name="MainMenu" type="Node3D"]
+[node name="MainMenu" type="Node3D" node_paths=PackedStringArray("letter_texts")]
 script = ExtResource("1_u51ic")
+letter_texts = [NodePath("CanvasLayer/title/SUPER/S"), NodePath("CanvasLayer/title/SUPER/U"), NodePath("CanvasLayer/title/SUPER/P"), NodePath("CanvasLayer/title/SUPER/E"), NodePath("CanvasLayer/title/SUPER/R"), NodePath("CanvasLayer/title/BUBBLE/B"), NodePath("CanvasLayer/title/BUBBLE/U"), NodePath("CanvasLayer/title/BUBBLE/B2"), NodePath("CanvasLayer/title/BUBBLE/B3"), NodePath("CanvasLayer/title/BUBBLE/L"), NodePath("CanvasLayer/title/BUBBLE/E"), NodePath("CanvasLayer/title/BATH/B"), NodePath("CanvasLayer/title/BATH/A"), NodePath("CanvasLayer/title/BATH/T"), NodePath("CanvasLayer/title/BATH/H"), NodePath("CanvasLayer/title/3D/3"), NodePath("CanvasLayer/title/3D/D")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -539,9 +546,37 @@ offset_left = 110.0
 offset_top = 425.0
 offset_right = 346.0
 offset_bottom = 494.0
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_ecjmw")
 theme_type_variation = &"FlatMenuButton"
 text = "get bubbling"
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 485.0
+offset_right = 1005.0
+offset_bottom = 546.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/font_size = 25
+text = "a game by: "
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 525.0
+offset_right = 1109.0
+offset_bottom = 604.0
+theme = ExtResource("2_ecjmw")
+theme_override_font_sizes/font_size = 25
+text = "yakobjorgensen
+jimmyc5"
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(56.8086, 0, 0, 0, 0.88794, 0, 0, 0, 45.9666, -17.3914, 1.62315, -11.3947)
@@ -569,11 +604,17 @@ light_color = Color(0.986618, 0.835148, 0.843505, 1)
 light_energy = 8.0
 omni_range = 17.8325
 
-[node name="Bubble2" parent="." instance=ExtResource("3_2e5md")]
+[node name="Bubble1" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7462, 2.76015, -9.78063)
+material_override = ExtResource("7_sn32v")
+mesh = SubResource("SphereMesh_jpjcn")
+skeleton = NodePath("")
 
-[node name="Bubble3" parent="." instance=ExtResource("3_2e5md")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -14.3779, 2.76015, -10.9852)
+[node name="Bubble2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3708, 3.117, -10.5081)
+material_override = ExtResource("8_t3thk")
+mesh = SubResource("SphereMesh_jpjcn")
+skeleton = NodePath("")
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(23.428, 0, 0, 0, 1, 0, 0, 0, 19.1688, -15.8376, 1.95403, -7.85536)
@@ -584,3 +625,4 @@ material = SubResource("FogMaterial_smbk3")
 transform = Transform3D(0.997988, 0.00350926, 0.063303, -0.0634002, 0.0552397, 0.996458, -7.45058e-09, -0.998467, 0.055351, 0, 0, 0)
 
 [connection signal="button_down" from="CanvasLayer/Button" to="." method="_on_button_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/Button" to="." method="_on_button_mouse_entered"]

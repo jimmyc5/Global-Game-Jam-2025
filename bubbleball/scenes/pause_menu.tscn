@@ -542,22 +542,28 @@ offset_bottom = 571.0
 
 [node name="continue" type="MenuButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_b62ja")
 theme_type_variation = &"FlatMenuButton"
 text = "continue"
 
 [node name="restart" type="MenuButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_b62ja")
 theme_type_variation = &"FlatMenuButton"
 text = "restart level"
 
 [node name="mainmenu" type="MenuButton" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 theme = ExtResource("2_b62ja")
 theme_type_variation = &"FlatMenuButton"
 text = "main menu"
 
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/continue" to="." method="_on_continue_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/continue" to="." method="_on_continue_mouse_entered"]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/restart" to="." method="_on_restart_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/mainmenu" to="." method="_on_mainmenu_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/mainmenu" to="." method="_on_mainmenu_mouse_entered"]

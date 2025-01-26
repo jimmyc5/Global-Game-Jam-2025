@@ -1,0 +1,7 @@
+# Music
+- Music by <a href="https://pixabay.com/users/lesiakower-25701529/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=153400">Lesiakower</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=153400">Pixabay</a>
+- Music by <a href="https://pixabay.com/users/ayitsmatt-17164088/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=199744">Matthew Pin</a> from <a href="https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=199744">Pixabay</a>
+- Music by <a href="https://pixabay.com/users/lesiakower-25701529/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=230092">Lesiakower</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=230092">Pixabay</a>
+
+# Shaders
+- Bubble shader: Pefeper "how to make a simple bubble shader in godot (in 4 minutes)" - https://www.youtube.com/watch?v=sj4BeJKhe_Y

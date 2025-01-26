@@ -10,15 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Super Bubble Bath"
+config/name="Super Bubble Bath 3D"
 config/description="it's super monkey ball but with bubbles"
 run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/images/bubble-ui.png"
 
 [autoload]
 
 Globals="*res://autoloads/Globals.gd"
+AudioPlayer="*res://autoloads/AudioPlayer.tscn"
 
 [display]
 

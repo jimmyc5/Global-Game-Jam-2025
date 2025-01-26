@@ -1,0 +1,51 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://friv3a4ut4sw"]
+
+[sub_resource type="Shader" id="Shader_8q6pc"]
+code = "shader_type spatial;
+
+uniform sampler2D noise_tex;
+uniform vec4 bubble_color: source_color = vec4(1.0);
+uniform float height_multiplier = 0.5;
+uniform float noise_sample_size = 0.1;
+uniform float animation_speed = 0.1;
+
+varying float height;
+
+float fresnel(vec3 normal, mat4 camera_matrix){
+	vec3 view_direction_world = (camera_matrix * vec4(0.0,0.0,1.0,0.0)).xyz;
+	vec3 normal_world = (camera_matrix * vec4(normal,0.0)).xyz;
+
+	float d = dot(view_direction_world, normal_world);
+	d = abs(d);
+	d = clamp(d, 0.0, 1.0);
+
+	return 1.0 - d;
+}
+
+void vertex(){
+	height = texture(noise_tex, VERTEX.xz * noise_sample_size + vec2(TIME) * animation_speed).r;
+	VERTEX += NORMAL * height * height_multiplier;
+}
+
+void fragment(){
+	ROUGHNESS = mix(0.05, 0.1, 1.0 - height);
+	SPECULAR = height;
+	ALPHA = fresnel(NORMAL, INV_VIEW_MATRIX);
+	ALBEDO = bubble_color.rgb;
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tbo1v"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aekyc"]
+seamless = true
+noise = SubResource("FastNoiseLite_tbo1v")
+
+[resource]
+render_priority = 0
+shader = SubResource("Shader_8q6pc")
+shader_parameter/bubble_color = Color(0.227451, 0.741176, 1, 1)
+shader_parameter/height_multiplier = 0.2
+shader_parameter/noise_sample_size = 0.1
+shader_parameter/animation_speed = 0.09
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_aekyc")

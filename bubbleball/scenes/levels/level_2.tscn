@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://6nx7160gl7g"]
+[gd_scene load_steps=9 format=3 uid="uid://6nx7160gl7g"]
 
 [ext_resource type="PackedScene" uid="uid://nmd6srv6hqrl" path="res://scenes/level_base.tscn" id="1_ushgc"]
 [ext_resource type="PackedScene" uid="uid://b53ltat52xg5b" path="res://scenes/player.tscn" id="2_liu2d"]
-[ext_resource type="PackedScene" uid="uid://co7xiw67xxxfw" path="res://scenes/bathtub.tscn" id="3_uafet"]
-[ext_resource type="PackedScene" uid="uid://cwlfcxp8tvp2l" path="res://scenes/HUD.tscn" id="4_4er5p"]
-[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="5_2hadk"]
+[ext_resource type="PackedScene" uid="uid://bu8lnkcq2t54t" path="res://scenes/bathtub.tscn" id="3_uafet"]
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="6_bblwr"]
-[ext_resource type="PackedScene" path="res://scenes/deathbox.tscn" id="7_3e4jy"]
+[ext_resource type="PackedScene" uid="uid://cnf4v6x6thsi1" path="res://scenes/deathbox.tscn" id="7_3e4jy"]
 [ext_resource type="PackedScene" uid="uid://cks515urplypv" path="res://scenes/bubblePickup.tscn" id="7_a2v4t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4v2o1"]
@@ -22,10 +20,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100786, 0.783318, 0.183569
 
 [node name="Bathtub" parent="." instance=ExtResource("3_uafet")]
 transform = Transform3D(1.00006, 0, 0, 0, 1.00006, 0, 0, 0, 1.00006, 0.17941, -0.536427, -25.5774)
-
-[node name="Hud" parent="." instance=ExtResource("4_4er5p")]
-
-[node name="PauseMenu" parent="." instance=ExtResource("5_2hadk")]
 
 [node name="Ground" type="Node3D" parent="."]
 

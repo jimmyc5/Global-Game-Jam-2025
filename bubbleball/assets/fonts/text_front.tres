@@ -5,6 +5,7 @@
 [resource]
 default_font = ExtResource("1_jnrfa")
 default_font_size = 40
+Label/constants/outline_size = 5
 MenuButton/colors/font_color = Color(1, 1, 1, 1)
 MenuButton/colors/font_hover_color = Color(0.894396, 0.777354, 0.892604, 1)
 MenuButton/colors/font_outline_color = Color(0, 0, 0, 1)

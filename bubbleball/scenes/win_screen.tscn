@@ -1,0 +1,243 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5kttmbqkdm3c"]
+
+[ext_resource type="Shader" path="res://assets/shaders/vignette_shader.gdshader" id="1_4g8qf"]
+[ext_resource type="Script" path="res://scripts/win_screen.gd" id="1_tdvym"]
+[ext_resource type="Theme" uid="uid://bmvf1xw0j8v56" path="res://assets/fonts/text_back.tres" id="2_j3mn8"]
+[ext_resource type="Theme" uid="uid://ci23fbpwtupdm" path="res://assets/fonts/text_front.tres" id="3_dk6pa"]
+[ext_resource type="Shader" path="res://assets/shaders/skybox.gdshader" id="5_vxkuw"]
+[ext_resource type="PackedScene" uid="uid://vojua4n11u1e" path="res://scenes/bubbles_particle_effect.tscn" id="6_ro3ig"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hpaq1"]
+shader = ExtResource("1_4g8qf")
+shader_parameter/inner_radius = -0.15
+shader_parameter/outer_radius = 0.98
+shader_parameter/vignette_strength = 1.02
+shader_parameter/dither_strength = 0.14
+shader_parameter/vignette_color = Color(5.58317e-06, 0.828906, 0.98143, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6vyg0"]
+shader = ExtResource("5_vxkuw")
+shader_parameter/sky_color = Color(0.389732, 0.825184, 0.901184, 1)
+shader_parameter/horizon_color = Color(0.984314, 0.639216, 0.709804, 1)
+
+[sub_resource type="Sky" id="Sky_0hbhr"]
+sky_material = SubResource("ShaderMaterial_6vyg0")
+
+[sub_resource type="Environment" id="Environment_12rso"]
+background_mode = 2
+sky = SubResource("Sky_0hbhr")
+ambient_light_source = 3
+fog_light_color = Color(0.874733, 0.887588, 0.907796, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1737
+volumetric_fog_albedo = Color(1, 0.739239, 0.985467, 1)
+volumetric_fog_sky_affect = 0.609
+
+[node name="WinScreen" type="Node3D"]
+script = ExtResource("1_tdvym")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+
+[node name="vignette" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_hpaq1")
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 560.0
+offset_top = 75.0
+offset_right = 600.0
+offset_bottom = 115.0
+
+[node name="super" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 9.0
+offset_top = -32.0
+offset_right = 49.0
+offset_bottom = 8.0
+
+[node name="timer" type="RichTextLabel" parent="CanvasLayer/Control/super"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 262.0
+offset_bottom = 131.0
+theme = ExtResource("2_j3mn8")
+theme_override_font_sizes/normal_font_size = 50
+text = " SUPER"
+scroll_active = false
+
+[node name="timer2" type="RichTextLabel" parent="CanvasLayer/Control/super"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 291.0
+offset_bottom = 128.0
+theme = ExtResource("3_dk6pa")
+theme_override_font_sizes/normal_font_size = 50
+text = " SUPER"
+scroll_active = false
+
+[node name="bubble" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 65.0
+offset_top = 28.0
+offset_right = 105.0
+offset_bottom = 68.0
+
+[node name="timer" type="RichTextLabel" parent="CanvasLayer/Control/bubble"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 262.0
+offset_bottom = 131.0
+theme = ExtResource("2_j3mn8")
+theme_override_font_sizes/normal_font_size = 50
+text = " BUBBLE"
+scroll_active = false
+
+[node name="timer2" type="RichTextLabel" parent="CanvasLayer/Control/bubble"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 291.0
+offset_bottom = 128.0
+theme = ExtResource("3_dk6pa")
+theme_override_font_sizes/normal_font_size = 50
+text = " BUBBLE"
+scroll_active = false
+
+[node name="bath" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 151.0
+offset_top = 87.0
+offset_right = 191.0
+offset_bottom = 127.0
+
+[node name="timer" type="RichTextLabel" parent="CanvasLayer/Control/bath"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 262.0
+offset_bottom = 131.0
+theme = ExtResource("2_j3mn8")
+theme_override_font_sizes/normal_font_size = 50
+text = " BATH"
+scroll_active = false
+
+[node name="timer2" type="RichTextLabel" parent="CanvasLayer/Control/bath"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 291.0
+offset_bottom = 128.0
+theme = ExtResource("3_dk6pa")
+theme_override_font_sizes/normal_font_size = 50
+text = " BATH"
+scroll_active = false
+
+[node name="3d" type="Control" parent="CanvasLayer/Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 239.0
+offset_top = 147.0
+offset_right = 279.0
+offset_bottom = 187.0
+
+[node name="timer" type="RichTextLabel" parent="CanvasLayer/Control/3d"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 262.0
+offset_bottom = 131.0
+theme = ExtResource("2_j3mn8")
+theme_override_font_sizes/normal_font_size = 50
+text = " 3D"
+scroll_active = false
+
+[node name="timer2" type="RichTextLabel" parent="CanvasLayer/Control/3d"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 53.0
+offset_right = 291.0
+offset_bottom = 128.0
+theme = ExtResource("3_dk6pa")
+theme_override_font_sizes/normal_font_size = 50
+text = " 3D"
+scroll_active = false
+
+[node name="thanks" type="Control" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_left = 789.0
+offset_top = 329.0
+offset_right = 829.0
+offset_bottom = 369.0
+
+[node name="timer4" type="RichTextLabel" parent="CanvasLayer/Control/thanks"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -422.0
+offset_top = 112.0
+offset_right = -123.0
+offset_bottom = 283.0
+theme = ExtResource("2_j3mn8")
+theme_override_font_sizes/normal_font_size = 35
+text = " thank you
+ for playing"
+scroll_active = false
+
+[node name="timer3" type="RichTextLabel" parent="CanvasLayer/Control/thanks"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -422.0
+offset_top = 112.0
+offset_right = -123.0
+offset_bottom = 283.0
+theme = ExtResource("3_dk6pa")
+theme_override_font_sizes/normal_font_size = 35
+text = " thank you
+ for playing"
+scroll_active = false
+
+[node name="Button" type="MenuButton" parent="CanvasLayer"]
+offset_left = 177.0
+offset_top = 458.0
+offset_right = 628.0
+offset_bottom = 527.0
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_dk6pa")
+theme_type_variation = &"FlatMenuButton"
+text = "go bubble once again"
+
+[node name="BlackScreen" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_12rso")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.148655, 0.988889, 0, -0.988889, 0.148655, 0, 0, 0)
+light_energy = 2.0
+
+[node name="BUBBLES" parent="." instance=ExtResource("6_ro3ig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.38508, -2.16546)
+
+[connection signal="button_down" from="CanvasLayer/Button" to="." method="_on_button_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/Button" to="." method="_on_button_mouse_entered"]

@@ -37,3 +37,15 @@ func _on_restart_button_down() -> void:
 
 func _on_continue_button_down() -> void:
 	unpause_game()
+
+
+func _on_continue_mouse_entered() -> void:
+	Globals.play_pop_sound()
+
+
+func _on_restart_mouse_entered() -> void:
+	Globals.play_pop_sound()
+
+
+func _on_mainmenu_mouse_entered() -> void:
+	Globals.play_pop_sound()
