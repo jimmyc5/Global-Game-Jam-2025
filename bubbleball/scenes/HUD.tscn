@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cibe2g5qbn53p"]
+[gd_scene load_steps=7 format=3 uid="uid://cwlfcxp8tvp2l"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_lo5y4"]
 [ext_resource type="Shader" path="res://assets/shaders/vignette_shader.gdshader" id="1_vie2o"]
