@@ -106,5 +106,6 @@ pause={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.0836262, 0.337808, 0.372219, 1)
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.084, 0.338, 0.372, 0)
 viewport/size/transparent=false

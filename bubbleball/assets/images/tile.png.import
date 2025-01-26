@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsx2otmneqe4l"
 path.s3tc="res://.godot/imported/tile.png-4df97e3230f905e3df311a6634fd05fa.s3tc.ctex"
+path.etc2="res://.godot/imported/tile.png-4df97e3230f905e3df311a6634fd05fa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/images/tile.png"
-dest_files=["res://.godot/imported/tile.png-4df97e3230f905e3df311a6634fd05fa.s3tc.ctex"]
+dest_files=["res://.godot/imported/tile.png-4df97e3230f905e3df311a6634fd05fa.s3tc.ctex", "res://.godot/imported/tile.png-4df97e3230f905e3df311a6634fd05fa.etc2.ctex"]
 
 [params]
 
