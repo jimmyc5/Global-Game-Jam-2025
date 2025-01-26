@@ -14,12 +14,13 @@
 [node name="Level0" type="Node3D"]
 
 [node name="LevelBase" parent="." instance=ExtResource("1_ushgc")]
+bubble_count = 1
 
 [node name="Player" parent="." instance=ExtResource("2_liu2d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100786, 0.783318, 0.183569)
 
 [node name="Bathtub" parent="." instance=ExtResource("3_uafet")]
-transform = Transform3D(1.00006, 0, 0, 0, 1.00006, 0, 0, 0, 1.00006, 0.17941, -0.536427, -25.5774)
+transform = Transform3D(1.00006, 0, 0, 0, 1.00006, 0, 0, 0, 1.00006, -0.0201833, -0.513296, -25.5774)
 
 [node name="Ground" type="Node3D" parent="."]
 
@@ -57,7 +58,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1.34436, 0.191588, 0, -1.02272, 0.251842, 0, 0, 0, 4.36955, -3.00794, 0.996874, -26.1039)
+transform = Transform3D(1.34436, 0.191588, 0, -1.02272, 0.251842, 0, 0, 0, 4.36955, -3.44915, 1.33253, -26.1039)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -156,7 +157,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(7.38081, 0, 0, 0, 1.79415, 0, 0, 0, 0.765799, 0.0366217, 2.23074, -27.8354)
+transform = Transform3D(7.38081, 0, 0, 0, 1.79415, 0, 0, 0, 0.765799, 0.0366217, 1.91521, -27.8354)
 material_override = ExtResource("6_bblwr")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")

@@ -7,9 +7,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5kp1y"]
 shader = ExtResource("2_fb0io")
-shader_parameter/inner_radius = -0.24
+shader_parameter/inner_radius = -0.52
 shader_parameter/outer_radius = 1.0
-shader_parameter/vignette_strength = 1.0
+shader_parameter/vignette_strength = 1.41
 shader_parameter/dither_strength = 0.1
 shader_parameter/vignette_color = Color(0.0239321, 0.11736, 0.180953, 1)
 
@@ -51,7 +51,7 @@ offset_right = 978.0
 offset_bottom = 205.0
 theme = ExtResource("1_7k1ek")
 theme_override_font_sizes/normal_font_size = 100
-text = " S"
+text = " SUPER"
 scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/S"]
@@ -62,123 +62,7 @@ offset_right = 978.0
 offset_bottom = 205.0
 theme = ExtResource("2_b62ja")
 theme_override_font_sizes/normal_font_size = 100
-text = " S"
-scroll_active = false
-
-[node name="U" type="Control" parent="CanvasLayer/title/SUPER"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 72.0
-offset_right = 72.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/SUPER/U"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " U"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/U"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " U"
-scroll_active = false
-
-[node name="P" type="Control" parent="CanvasLayer/title/SUPER"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 146.0
-offset_right = 146.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/SUPER/P"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " P"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/P"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " P"
-scroll_active = false
-
-[node name="E" type="Control" parent="CanvasLayer/title/SUPER"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 222.0
-offset_right = 222.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/SUPER/E"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " E
-"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/E"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " E
-"
-scroll_active = false
-
-[node name="R" type="Control" parent="CanvasLayer/title/SUPER"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 292.0
-offset_right = 292.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/SUPER/R"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " R
-"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/SUPER/R"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " R
-"
+text = " SUPER"
 scroll_active = false
 
 [node name="BUBBLE" type="Control" parent="CanvasLayer/title"]
@@ -191,6 +75,8 @@ offset_bottom = 40.0
 [node name="B" type="Control" parent="CanvasLayer/title/BUBBLE"]
 layout_mode = 3
 anchors_preset = 0
+offset_left = -54.0
+offset_right = -54.0
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B"]
 layout_mode = 0
@@ -200,7 +86,7 @@ offset_right = 978.0
 offset_bottom = 204.0
 theme = ExtResource("1_7k1ek")
 theme_override_font_sizes/normal_font_size = 100
-text = " B"
+text = " BUBBLE"
 scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B"]
@@ -211,155 +97,15 @@ offset_right = 978.0
 offset_bottom = 205.0
 theme = ExtResource("2_b62ja")
 theme_override_font_sizes/normal_font_size = 100
-text = " B"
-scroll_active = false
-
-[node name="U" type="Control" parent="CanvasLayer/title/BUBBLE"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 72.0
-offset_right = 72.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/U"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " U"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/U"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " U"
-scroll_active = false
-
-[node name="B2" type="Control" parent="CanvasLayer/title/BUBBLE"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 146.0
-offset_right = 146.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B2"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " B"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B2"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " B"
-scroll_active = false
-
-[node name="B3" type="Control" parent="CanvasLayer/title/BUBBLE"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 222.0
-offset_right = 222.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B3"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " B"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/B3"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " B"
-scroll_active = false
-
-[node name="L" type="Control" parent="CanvasLayer/title/BUBBLE"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 292.0
-offset_right = 292.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/L"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " L"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/L"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " L"
-scroll_active = false
-
-[node name="E" type="Control" parent="CanvasLayer/title/BUBBLE"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 356.0
-offset_right = 356.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/E"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " E"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BUBBLE/E"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " E"
+text = " BUBBLE"
 scroll_active = false
 
 [node name="BATH" type="Control" parent="CanvasLayer/title"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 142.0
+offset_left = 103.0
 offset_top = 103.0
-offset_right = 182.0
+offset_right = 143.0
 offset_bottom = 143.0
 
 [node name="B" type="Control" parent="CanvasLayer/title/BATH"]
@@ -374,7 +120,7 @@ offset_right = 978.0
 offset_bottom = 204.0
 theme = ExtResource("1_7k1ek")
 theme_override_font_sizes/normal_font_size = 100
-text = " B"
+text = " BATH"
 scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BATH/B"]
@@ -385,99 +131,15 @@ offset_right = 978.0
 offset_bottom = 205.0
 theme = ExtResource("2_b62ja")
 theme_override_font_sizes/normal_font_size = 100
-text = " B"
-scroll_active = false
-
-[node name="A" type="Control" parent="CanvasLayer/title/BATH"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 72.0
-offset_right = 72.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BATH/A"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " A"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BATH/A"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " A"
-scroll_active = false
-
-[node name="T" type="Control" parent="CanvasLayer/title/BATH"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 146.0
-offset_right = 146.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BATH/T"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " T"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BATH/T"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " T"
-scroll_active = false
-
-[node name="H" type="Control" parent="CanvasLayer/title/BATH"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 222.0
-offset_right = 222.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/BATH/H"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " H"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/BATH/H"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " H"
+text = " BATH"
 scroll_active = false
 
 [node name="3D" type="Control" parent="CanvasLayer/title"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 489.0
+offset_left = 446.0
 offset_top = 103.0
-offset_right = 529.0
+offset_right = 486.0
 offset_bottom = 143.0
 
 [node name="3" type="Control" parent="CanvasLayer/title/3D"]
@@ -492,7 +154,7 @@ offset_right = 978.0
 offset_bottom = 204.0
 theme = ExtResource("1_7k1ek")
 theme_override_font_sizes/normal_font_size = 100
-text = " 3"
+text = " 3D"
 scroll_active = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/3D/3"]
@@ -503,35 +165,7 @@ offset_right = 978.0
 offset_bottom = 205.0
 theme = ExtResource("2_b62ja")
 theme_override_font_sizes/normal_font_size = 100
-text = " 3"
-scroll_active = false
-
-[node name="D" type="Control" parent="CanvasLayer/title/3D"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 72.0
-offset_right = 72.0
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/title/3D/D"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 52.0
-offset_right = 157.0
-offset_bottom = 175.0
-theme = ExtResource("1_7k1ek")
-theme_override_font_sizes/normal_font_size = 100
-text = " D"
-scroll_active = false
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/title/3D/D"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 53.0
-offset_right = 151.0
-offset_bottom = 178.0
-theme = ExtResource("2_b62ja")
-theme_override_font_sizes/normal_font_size = 100
-text = " D"
+text = " 3D"
 scroll_active = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
@@ -561,9 +195,35 @@ theme = ExtResource("2_b62ja")
 theme_type_variation = &"FlatMenuButton"
 text = "main menu"
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 877.0
+offset_top = 491.0
+offset_right = 1119.0
+offset_bottom = 633.0
+
+[node name="Music" type="CheckBox" parent="CanvasLayer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_b62ja")
+text = "mute music"
+
+[node name="SFX" type="CheckBox" parent="CanvasLayer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("2_b62ja")
+text = "mute SFX"
+
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/continue" to="." method="_on_continue_button_down"]
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/continue" to="." method="_on_continue_mouse_entered"]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/restart" to="." method="_on_restart_button_down"]
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/restart" to="." method="_on_restart_mouse_entered"]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/mainmenu" to="." method="_on_mainmenu_button_down"]
 [connection signal="mouse_entered" from="CanvasLayer/VBoxContainer/mainmenu" to="." method="_on_mainmenu_mouse_entered"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer2/Music" to="." method="_on_music_mouse_entered"]
+[connection signal="toggled" from="CanvasLayer/VBoxContainer2/Music" to="." method="_on_music_toggled"]
+[connection signal="mouse_entered" from="CanvasLayer/VBoxContainer2/SFX" to="." method="_on_sfx_mouse_entered"]
+[connection signal="toggled" from="CanvasLayer/VBoxContainer2/SFX" to="." method="_on_sfx_toggled"]

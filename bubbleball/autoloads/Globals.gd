@@ -24,6 +24,9 @@ func play_pop_sound(bus = "Effects"):
 var level_number: int = 0
 var max_level: int = 2
 
+var music_disabled: bool = false
+var sfx_disabled: bool = false
+
 # gets set and tracked in level_base.gd
 var bubble_count: int = 0
 var bubbles_collected: int = 0
@@ -32,6 +35,17 @@ var level_initialized = false
 
 func _ready():
 	connect("bathtub_entered", next_level)
+
+func toggle_music(toggle: bool):
+	var index = AudioServer.get_bus_index("Music")
+	music_disabled = toggle
+	AudioServer.set_bus_mute(index, toggle)
+	
+
+func toggle_sfx(toggle: bool):
+	var index = AudioServer.get_bus_index("Effects")
+	sfx_disabled = toggle
+	AudioServer.set_bus_mute(index, toggle)
 
 func set_bubbles(num_bubbs):
 	bubble_count = num_bubbs

@@ -32,7 +32,7 @@ bubble_count = 1
 transform = Transform3D(-0.999716, 0, -0.023839, 0, 1, 0, 0.023839, 0, -0.999716, -0.100786, 0.783318, 0.183569)
 
 [node name="Bathtub" parent="." instance=ExtResource("4_piski")]
-transform = Transform3D(0.798079, 0, 0, 0, 0.798079, 0, 0, 0, 0.798079, 0.151435, -3.6796, -29.368)
+transform = Transform3D(0.798079, 0, 0, 0, 0.798079, 0, 0, 0, 0.798079, 0.151435, -4.2692, -42.1489)
 
 [node name="Deathbox" parent="." instance=ExtResource("7_rbvhw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
@@ -86,7 +86,7 @@ transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(3.086, 0, 0, 0, 0.383946, 1.03018, 0, -0.0397651, 9.94679, 0.0277944, -1.47348, -22.8637)
+transform = Transform3D(3.086, 0, 0, 0, 0.383946, 2.20645, 0, -0.0397651, 21.3042, 0.027761, -2.00149, -28.7)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -96,8 +96,19 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D13/StaticBody3D"]
 shape = SubResource("BoxShape3D_icjt1")
 
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(3.086, 0, 0, 0, 0.975578, 0.0714792, 0, -0.10104, 0.690159, 0.027761, -2.02868, -28.9625)
+material_override = ExtResource("2_df1di")
+mesh = SubResource("BoxMesh_4v2o1")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D19"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D19/StaticBody3D"]
+shape = SubResource("BoxShape3D_icjt1")
+
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.562916, -0.1325, 1.05765e-07, 0.323262, 0.228269, 1.03279, -0.0335656, -0.0237021, 9.94652, 1.79725, -1.28273, -22.9099)
+transform = Transform3D(0.562916, -0.1325, 2.14971e-07, 0.323262, 0.228269, 2.21204, -0.0335656, -0.0237021, 21.3036, 1.77157, -1.84239, -28.7429)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -109,7 +120,7 @@ transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.562916, 0.1325, -1.05765e-07, -0.323262, 0.228269, 1.03279, 0.0335656, -0.0237021, 9.94652, -1.78261, -1.28334, -22.8648)
+transform = Transform3D(0.562916, 0.1325, -2.26529e-07, -0.323262, 0.228269, 2.21204, 0.0335656, -0.0237021, 21.3036, -1.757, -1.843, -28.6978)
 material_override = SubResource("StandardMaterial3D_s05or")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -132,7 +143,7 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.562916, -0.1325, 2.85204e-08, 0.3227, 0.227872, -0.475072, 0.0385996, 0.0272568, 3.97169, 1.79725, -0.975384, -16.0481)
+transform = Transform3D(0.562916, -0.1325, 2.85204e-08, 0.3227, 0.227872, -0.475072, 0.0385996, 0.0272568, 3.97169, 1.80338, -0.980222, -16.0237)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -243,9 +254,19 @@ shape = SubResource("BoxShape3D_icjt1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114479, -0.955684, -15.0618)
 
 [node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.166712, 3.33343, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.166712, 2.76906, -6.14252)
 pixel_size = 0.0166
-text = "Use WASD to Move"
+text = "Use WASD or left joystick
+to Move"
+font = ExtResource("7_vjkal")
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.166712, 2.27779, 2.05827)
+pixel_size = 0.0166
+text = "Use the mouse or right joystick
+to look around
+Press 'P', 'ESC', or start on controller
+to pause"
 font = ExtResource("7_vjkal")
 
 [node name="Label3D2" type="Label3D" parent="."]
@@ -253,4 +274,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0292864, 2.43216, -15.7276)
 pixel_size = 0.0166
 text = "Collect the bubbles 
 and head to the bath!"
+font = ExtResource("7_vjkal")
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(0.786375, 0, 0.61775, 0, 1, 0, -0.61775, 0, 0.786375, -3.94436, -0.201106, -30.7789)
+pixel_size = 0.0166
+text = "Use the spacebar
+or any action button
+on the controller
+to jump"
 font = ExtResource("7_vjkal")

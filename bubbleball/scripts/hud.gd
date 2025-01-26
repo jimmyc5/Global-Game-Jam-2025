@@ -35,6 +35,8 @@ func set_bubble_text():
 func set_timer_text():
 	timer_text.text = " " + str(Globals.time_limit)
 	timer_text_1.text = " " + str(Globals.time_limit)
+	if Globals.time_limit <= 20:
+		timer_text_1.set("theme_override_colors/font_color", Color(1, 0, 0, 1))
 
 func fade_screen_out(duration: float = 1):
 	var tween = get_tree().create_tween()
