@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var water: MeshInstance3D = %"water"
 @onready var bubbles: GPUParticles3D = %"BUBBLES"
+@onready var lockbox = %"lockbox"
 
 var first_entered: bool = false
 
@@ -11,6 +12,11 @@ var win_water_color: Color = Color(0.752, 0.5, 0.7, 1)
 func _ready():
 	bubbles.emitting = false
 	water.material_override.set_shader_parameter("color", initial_water_color)
+	Globals.connect("bubble_added", check_unlocked)
+
+func check_unlocked():
+	if Globals.bubbles_collected == Globals.bubble_count:
+		lockbox.queue_free()
 
 func _on_area_3d_body_entered(_body: Node3D) -> void:
 	if not first_entered:

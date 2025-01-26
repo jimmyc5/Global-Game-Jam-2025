@@ -22,6 +22,7 @@ script = ExtResource("1_yk8ly")
 shape = SubResource("SphereShape3D_qtxmp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
 material_override = ExtResource("2_0x8x0")
 mesh = SubResource("SphereMesh_e1pbh")
 
@@ -30,5 +31,9 @@ shape = SubResource("SphereShape3D_57w71")
 target_position = Vector3(0, -0.255, 0)
 script = ExtResource("3_v73aq")
 followHitbox = NodePath("../CollisionShape3D")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.981368, 0.383718, 0.752402, 1)
+light_energy = 5.137
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

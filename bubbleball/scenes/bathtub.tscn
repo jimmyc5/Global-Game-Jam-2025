@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bu8lnkcq2t54t"]
+[gd_scene load_steps=15 format=3 uid="uid://bu8lnkcq2t54t"]
 
 [ext_resource type="Script" path="res://scripts/bathtub.gd" id="1_l7322"]
-[ext_resource type="Material" path="res://assets/material/grid_material_tub.tres" id="2_cid5t"]
+[ext_resource type="Material" uid="uid://b3shuli667q82" path="res://assets/material/grid_material_tub.tres" id="2_cid5t"]
 [ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="2_pm7ra"]
-[ext_resource type="PackedScene" path="res://scenes/bubbles_particle_effect.tscn" id="4_xhmel"]
+[ext_resource type="PackedScene" uid="uid://vojua4n11u1e" path="res://scenes/bubbles_particle_effect.tscn" id="4_xhmel"]
+[ext_resource type="FontFile" uid="uid://cejfif7murtd0" path="res://assets/fonts/Modak-Regular.ttf" id="5_vlrjb"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qn4kc"]
 
@@ -47,14 +48,14 @@ shader_parameter/normalmap_b = SubResource("NoiseTexture2D_fcj20")
 [node name="Bathtub" type="Node3D"]
 script = ExtResource("1_l7322")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(5.12074, 0, 0, 0, 0.316434, 0, 0, 0, 3.23192, 0, 0.277737, 0)
+[node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.12074, 0, 0, 0, 0.316434, 0, 0, 0, 3.23192, 0, -0.168051, 0)
 material_override = ExtResource("2_cid5t")
 mesh = SubResource("BoxMesh_qn4kc")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_48tq4")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
@@ -113,6 +114,27 @@ shape = SubResource("BoxShape3D_5op67")
 
 [node name="BUBBLES" parent="." instance=ExtResource("4_xhmel")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59924, 0)
+transform = Transform3D(1.00049, 0, 0, 0, 1.00049, 0, 0, 0, 1.00049, 0, 1.59924, 0)
+
+[node name="lockbox" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="lockboxmesh" type="MeshInstance3D" parent="lockbox"]
+unique_name_in_owner = true
+transform = Transform3D(5.12074, 0, 0, 0, 0.316434, 0, 0, 0, 3.23192, 0, 1.74756, 0)
+material_override = ExtResource("2_cid5t")
+mesh = SubResource("BoxMesh_qn4kc")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="lockbox/lockboxmesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lockbox/lockboxmesh/StaticBody3D"]
+shape = SubResource("BoxShape3D_48tq4")
+
+[node name="Label3D3" type="Label3D" parent="lockbox"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -0.166712, 2.25114, 1.53745)
+pixel_size = 0.0166
+text = "Needs more BUBBLES"
+font = ExtResource("5_vlrjb")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

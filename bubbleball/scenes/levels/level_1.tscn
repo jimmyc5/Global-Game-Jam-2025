@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://d4iqoidtpjat7" path="res://assets/material/grid_material.tres" id="2_jy56a"]
 [ext_resource type="PackedScene" uid="uid://b53ltat52xg5b" path="res://scenes/player.tscn" id="3_lgct4"]
 [ext_resource type="PackedScene" uid="uid://bu8lnkcq2t54t" path="res://scenes/bathtub.tscn" id="4_jye2b"]
-[ext_resource type="PackedScene" path="res://scenes/deathbox.tscn" id="7_6s53y"]
+[ext_resource type="PackedScene" uid="uid://cnf4v6x6thsi1" path="res://scenes/deathbox.tscn" id="7_6s53y"]
 [ext_resource type="PackedScene" uid="uid://cks515urplypv" path="res://scenes/bubblePickup.tscn" id="8_omfj5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4v2o1"]
