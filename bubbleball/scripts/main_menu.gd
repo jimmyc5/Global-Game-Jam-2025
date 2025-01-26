@@ -21,15 +21,21 @@ func _ready():
 		).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BOUNCE).set_delay(i * letter_delay)
 		tween.finished.connect(play_pop_sound)
 
+func _process(_delta):
+	if Input.is_action_just_pressed("jump"):
+		start_game()
+
 func play_pop_sound():
 	Globals.play_pop_sound("Master")
 
 func _on_button_button_down() -> void:
+	start_game()
+
+func start_game():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	AudioPlayer.play_music(GAME_THEME)
 	Globals.toggle_speed_mode(false)
 	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(Globals.level_number) + ".tscn")
-
 
 func _on_button_mouse_entered() -> void:
 	Globals.play_pop_sound()
