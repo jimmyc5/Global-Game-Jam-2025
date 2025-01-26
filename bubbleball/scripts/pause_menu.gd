@@ -7,7 +7,7 @@ var is_paused = false
 func _ready() -> void:
 	canvas.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		if is_paused:
 			unpause_game()

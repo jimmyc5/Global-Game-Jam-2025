@@ -3,5 +3,5 @@ extends ShapeCast3D
 
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	global_position = followHitbox.global_position

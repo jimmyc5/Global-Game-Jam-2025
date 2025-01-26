@@ -21,15 +21,19 @@ var lastJumpInputTime := 0
 @export var tilt_upper_limit := PI / 3.0
 @export var tilt_lower_limit := -PI / 8.0
 
+var initializing: bool = true
+
 var move_vector: Vector3 = Vector3.ZERO
 var _camera_input_direction := Vector2.ZERO
 var _gravity := -30.0
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if not initializing and event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _unhandled_input(event: InputEvent) -> void:
+	if initializing:
+		return
 	var is_camera_motion := (
 		event is InputEventMouseMotion and
 		Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
@@ -39,14 +43,43 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.connect("bathtub_entered", set_initializing)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	var transition_time = 3
+	var tween = get_tree().create_tween()
+	var rotation_y
+	if randi_range(0, 1):
+		rotation_y = 3.25
+	else:
+		rotation_y = -3.25
+	tween.tween_property(
+		_camera_pivot,
+		"rotation:y",
+		rotation_y,
+		transition_time
+	).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUINT)
+	tween.parallel().tween_property(
+		_camera_pivot,
+		"rotation:x",
+		0.5,
+		transition_time
+	).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUINT)
+	tween.finished.connect(done_initializing)
 
+func set_initializing():
+	initializing = true
+
+func done_initializing():
+	initializing = false
+	Globals.emit_signal("player_ready")
 
 func get_input():
 	move_vector = Vector3.ZERO
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
+	if initializing:
+		return
 	get_input()
 	#bubble.apply_central_force(move_vector * move_speed)
 	#camera.position = bubble.position + camera_offset
@@ -60,17 +93,18 @@ func is_on_floor():
 	return false
 
 func get_camera_rotation(delta):
-	var look_direction = Vector2.ZERO;
-	if Input.is_action_pressed("look_left"):
-		look_direction += Vector2(-1, 0);
-	if Input.is_action_pressed("look_right"):
-		look_direction += Vector2(1, 0);
-	if Input.is_action_pressed("look_up"):
-		look_direction += Vector2(0, -1);
-	if Input.is_action_pressed("look_down"):
-		look_direction += Vector2(0, 1);
-	if look_direction:
-		_camera_input_direction = look_direction * 3
+	if not initializing:
+		var look_direction = Vector2.ZERO;
+		if Input.is_action_pressed("look_left"):
+			look_direction += Vector2(-1, 0);
+		if Input.is_action_pressed("look_right"):
+			look_direction += Vector2(1, 0);
+		if Input.is_action_pressed("look_up"):
+			look_direction += Vector2(0, -1);
+		if Input.is_action_pressed("look_down"):
+			look_direction += Vector2(0, 1);
+		if look_direction:
+			_camera_input_direction = look_direction * 3
 	_camera_pivot.rotation.x += _camera_input_direction.y * delta
 	_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, tilt_lower_limit, tilt_upper_limit)
 	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
@@ -80,6 +114,9 @@ func _physics_process(delta: float) -> void:
 	get_camera_rotation(delta)
 
 	_camera_input_direction = Vector2.ZERO
+	
+	if initializing:
+		return
 
 	var raw_input := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var forward := _camera.global_basis.z

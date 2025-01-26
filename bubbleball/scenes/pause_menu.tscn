@@ -7,11 +7,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5kp1y"]
 shader = ExtResource("2_fb0io")
-shader_parameter/inner_radius = 0.1
+shader_parameter/inner_radius = -0.24
 shader_parameter/outer_radius = 1.0
 shader_parameter/vignette_strength = 1.0
-shader_parameter/dither_strength = 0.03
-shader_parameter/vignette_color = Color(0.336342, 0.644563, 0.86247, 1)
+shader_parameter/dither_strength = 0.1
+shader_parameter/vignette_color = Color(0.0239321, 0.11736, 0.180953, 1)
 
 [node name="PauseMenu" type="Node3D"]
 process_mode = 3
