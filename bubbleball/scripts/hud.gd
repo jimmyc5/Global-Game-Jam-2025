@@ -7,6 +7,9 @@ extends Node3D
 @onready var timer_text: RichTextLabel = %"timer"
 @onready var timer_text_1: RichTextLabel = %"timer2"
 @onready var black_screen: ColorRect = %"BlackScreen"
+@onready var timer_text_red: RichTextLabel = %"timer_red"
+@onready var timeout = %"timeout"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +25,17 @@ func _ready() -> void:
 	Globals.connect("set_level_text", set_level_text)
 	Globals.connect("bubble_added", set_bubble_text)
 	Globals.connect("set_timer_text", set_timer_text)
+	
+	toggle_red_text(false)
+	timeout.visible = false
+
+func toggle_red_text(on: bool):
+	if on:
+		timer_text_red.visible = true
+		timer_text_1.visible = false
+	else:
+		timer_text_red.visible = false
+		timer_text_1.visible = true
 
 func set_level_text():
 	level_text.text = " " + str(Globals.level_number)
@@ -35,8 +49,21 @@ func set_bubble_text():
 func set_timer_text():
 	timer_text.text = " " + str(Globals.time_limit)
 	timer_text_1.text = " " + str(Globals.time_limit)
-	if Globals.time_limit <= 20:
-		timer_text_1.set("theme_override_colors/font_color", Color(1, 0, 0, 1))
+	timer_text_red.text = " " + str(Globals.time_limit)
+	if Globals.time_limit <= 10:
+		toggle_red_text(true)
+	if Globals.time_limit <= 0:
+		Globals.emit_signal("stop_player")
+		timeout.scale = Vector2.ZERO
+		timeout.visible = true
+		var tween = get_tree().create_tween()
+		tween.tween_property(
+			timeout,
+			"scale",
+			Vector2(1, 1),
+			1
+		).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+		tween.finished.connect(disable_black_screen)
 
 func fade_screen_out(duration: float = 1):
 	var tween = get_tree().create_tween()

@@ -1,9 +1,21 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://duiknn22c4m8j"]
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://duiknn22c4m8j"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_2hsn7"]
 resource_name = "Reverb"
 room_size = 0.4
 damping = 0.3
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_2bt0n"]
+resource_name = "PitchShift"
+pitch_scale = 2.0
+fft_size = 2
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_1w86x"]
+resource_name = "Delay"
+
+[sub_resource type="AudioEffectAmplify" id="AudioEffectAmplify_d2de0"]
+resource_name = "Amplify"
+volume_db = 1.0
 
 [resource]
 bus/0/volume_db = -0.923751
@@ -21,3 +33,9 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = -1.58591
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectPitchShift_2bt0n")
+bus/2/effect/0/enabled = false
+bus/2/effect/1/effect = SubResource("AudioEffectDelay_1w86x")
+bus/2/effect/1/enabled = false
+bus/2/effect/2/effect = SubResource("AudioEffectAmplify_d2de0")
+bus/2/effect/2/enabled = false

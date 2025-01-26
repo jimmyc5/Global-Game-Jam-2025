@@ -7,6 +7,7 @@ signal fade_screen_in
 signal set_level_text
 signal set_timer_text
 signal player_ready
+signal stop_player
 
 const POP_EFFECTS: Array[AudioStream] = [
 	preload("res://assets/audio/pop_0.wav"),
@@ -36,6 +37,12 @@ var level_initialized = false
 func _ready():
 	connect("bathtub_entered", next_level)
 
+func toggle_speed_mode(on: bool):
+	var index = AudioServer.get_bus_index("Music")
+	AudioServer.set_bus_effect_enabled(index, 0, on)
+	AudioServer.set_bus_effect_enabled(index, 1, on)
+	AudioServer.set_bus_effect_enabled(index, 2, on)
+
 func toggle_music(toggle: bool):
 	var index = AudioServer.get_bus_index("Music")
 	music_disabled = toggle
@@ -58,8 +65,12 @@ func bubble_picked_up():
 	emit_signal("bubble_added")
 
 func player_died():
+	emit_signal("stop_player")
 	play_pop_sound()
-	call_deferred("reload_scene")
+	var fade_duration = 1
+	emit_signal("fade_screen_in", fade_duration)
+	var timer = get_tree().create_timer(fade_duration)
+	timer.timeout.connect(reload_scene)
 
 func reload_scene():
 	get_tree().reload_current_scene()	
@@ -67,6 +78,7 @@ func reload_scene():
 func next_level():
 	print("starting level: " + str(level_number + 1))
 	var _next_level = level_number + 1
+	toggle_speed_mode(false)
 	if _next_level > max_level:
 		var fade_duration = 4
 		var delay = 2
