@@ -46,6 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.connect("stop_player", stop_player)
 	Globals.connect("bathtub_entered", rub_a_dub_dub)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var transition_time = 3
@@ -68,6 +69,10 @@ func _ready() -> void:
 		transition_time
 	).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUINT)
 	tween.finished.connect(done_initializing)
+
+func stop_player():
+	print("freezing")
+	bubble.freeze = true
 
 func rub_a_dub_dub():
 	initializing = true

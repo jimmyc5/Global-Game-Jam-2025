@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dd8q36c34sr7y"]
+[gd_scene load_steps=15 format=3 uid="uid://dd8q36c34sr7y"]
 
 [ext_resource type="Theme" uid="uid://bmvf1xw0j8v56" path="res://assets/fonts/text_back.tres" id="1_scrr5"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_u51ic"]
@@ -31,9 +31,6 @@ volumetric_fog_albedo = Color(1, 0.505882, 1, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_jpjcn"]
 radial_segments = 20
 rings = 10
-
-[sub_resource type="FogMaterial" id="FogMaterial_smbk3"]
-albedo = Color(1, 0.85098, 1, 1)
 
 [node name="MainMenu" type="Node3D" node_paths=PackedStringArray("letter_texts")]
 script = ExtResource("1_u51ic")
@@ -623,11 +620,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3708, 3.117, -10.5081)
 material_override = ExtResource("8_t3thk")
 mesh = SubResource("SphereMesh_jpjcn")
 skeleton = NodePath("")
-
-[node name="FogVolume" type="FogVolume" parent="."]
-transform = Transform3D(23.428, 0, 0, 0, 1, 0, 0, 0, 19.1688, -15.8376, 1.95403, -7.85536)
-size = Vector3(2, 2, 2.37646)
-material = SubResource("FogMaterial_smbk3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.997988, 0.00350926, 0.063303, -0.0634002, 0.0552397, 0.996458, -7.45058e-09, -0.998467, 0.055351, 0, 0, 0)

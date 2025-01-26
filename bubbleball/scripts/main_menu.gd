@@ -6,6 +6,7 @@ const GAME_THEME: AudioStream = preload("res://assets/audio/pixify.mp3")
 @export var letter_texts: Array[Control]
 
 func _ready():
+	Globals.toggle_speed_mode(false)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	AudioPlayer.play_music(MAIN_THEME)
 	var letter_delay = 0.08
@@ -26,6 +27,7 @@ func play_pop_sound():
 func _on_button_button_down() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	AudioPlayer.play_music(GAME_THEME)
+	Globals.toggle_speed_mode(false)
 	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(Globals.level_number) + ".tscn")
 
 

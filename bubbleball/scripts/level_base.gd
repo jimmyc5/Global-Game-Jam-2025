@@ -13,6 +13,7 @@ func _ready() -> void:
 	Globals.emit_signal("set_timer_text")
 	Globals.connect("player_ready", initiate_timer)
 	Globals.connect("bathtub_entered", stop_timer)
+	Globals.toggle_speed_mode(false)
 
 func initiate_timer():
 	set_timer(time_limit)
@@ -29,7 +30,9 @@ func set_timer(time_amount):
 
 func reset_timer():
 	var new_limit = Globals.time_limit - 1
-	if new_limit <= 0:
+	if new_limit <= 10:
+		Globals.toggle_speed_mode(true)
+	if new_limit < 0:
 		Globals.player_died()
 	else:
 		set_timer(new_limit)

@@ -16,7 +16,6 @@ background_mode = 2
 sky = SubResource("Sky_ltsb3")
 ambient_light_source = 3
 fog_light_color = Color(0.874733, 0.887588, 0.907796, 1)
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.1737
 volumetric_fog_albedo = Color(1, 0.739239, 0.985467, 1)
 volumetric_fog_sky_affect = 0.609
