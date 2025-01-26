@@ -101,17 +101,6 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D13/StaticBody3D"]
 shape = SubResource("BoxShape3D_icjt1")
 
-[node name="MeshInstance3D19" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(3.086, 0, 0, 0, 0.975578, 0.0714792, 0, -0.10104, 0.690159, 0.027761, -2.02868, -28.9625)
-material_override = ExtResource("2_df1di")
-mesh = SubResource("BoxMesh_4v2o1")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D19"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D19/StaticBody3D"]
-shape = SubResource("BoxShape3D_icjt1")
-
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(0.562916, -0.1325, 8.68941e-08, 0.324662, 0.229258, 0.297191, -0.0148167, -0.0104627, 6.51199, 1.79725, -1.27137, -23.7798)
 material_override = ExtResource("2_df1di")
@@ -180,15 +169,16 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D25/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_jq6nt")
 
-[node name="MeshInstance3D19" type="MeshInstance3D" parent="Ground"]
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(3.086, 0, 0, 0, -0.00738824, 2.50682, 0, -0.388668, -0.0476526, -0.456659, -1.17182, -17.8125)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D19"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D21"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D19/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D21/StaticBody3D"]
+transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="Ground"]
@@ -203,20 +193,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
 
-[node name="MeshInstance3D21" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.226261, -0.190397, 1.88455, 0.562956, 0.130462, 0.271482, -0.23321, 0.130205, 2.48374, 2.89602, -0.785193, -19.3674)
-material_override = ExtResource("2_df1di")
-mesh = SubResource("BoxMesh_4v2o1")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D21"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D21/StaticBody3D"]
-transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
-shape = SubResource("BoxShape3D_icjt1")
-
 [node name="MeshInstance3D22" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.29113, -0.172827, -1.91405, 0.458927, 0.179583, -0.643382, 0.356553, -0.0900304, 2.39096, 2.58242, -0.876215, -16.2026)
+transform = Transform3D(0.226261, -0.190397, 1.88455, 0.562956, 0.130462, 0.271482, -0.23321, 0.130205, 2.48374, 2.89602, -0.785193, -19.3674)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -228,7 +206,7 @@ transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D23" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.29113, -0.172827, -1.91405, 0.458927, 0.179583, -0.643382, 0.356553, -0.0900304, 2.39096, 2.73416, -0.876215, -16.2682)
+transform = Transform3D(0.29113, -0.172827, -1.91405, 0.458927, 0.179583, -0.643382, 0.356553, -0.0900304, 2.39096, 2.58242, -0.876215, -16.2026)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -240,9 +218,9 @@ transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D26" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.100525, -2.86326, -0.0668114, -0.42334, 0.495733, -0.383216, 7.64051, 0.0651385, -0.020354, -2.12224, -1.0805, -15.4206)
+transform = Transform3D(0.29113, -0.172827, -1.91405, 0.458927, 0.179583, -0.643382, 0.356553, -0.0900304, 2.39096, 2.73416, -0.876215, -16.2682)
 material_override = ExtResource("2_df1di")
-mesh = SubResource("PrismMesh_vhrg6")
+mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D26"]
@@ -251,7 +229,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_jq6nt")
 
 [node name="MeshInstance3D27" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.0115132, 0.154772, 0.30175, 0.0166818, -0.629767, 0.0740735, 0.876262, 0.0099556, -0.00537487, -3.56292, -0.637798, -15.5535)
+transform = Transform3D(0.100525, -2.86326, -0.0668114, -0.42334, 0.495733, -0.383216, 7.64051, 0.0651385, -0.020354, -2.12224, -1.0805, -15.4206)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("PrismMesh_vhrg6")
 skeleton = NodePath("../..")
@@ -262,7 +240,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_jq6nt")
 
 [node name="MeshInstance3D28" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(0.00584864, 0.340275, 0.264544, 0.019407, -0.552063, 0.16296, 0.876262, 0.00995561, -0.00537487, -1.59766, -1.1932, -18.6736)
+transform = Transform3D(0.0115132, 0.154772, 0.30175, 0.0166818, -0.629767, 0.0740735, 0.876262, 0.0099556, -0.00537487, -3.56292, -0.637798, -15.5535)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("PrismMesh_vhrg6")
 skeleton = NodePath("../..")
@@ -273,9 +251,9 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_jq6nt")
 
 [node name="MeshInstance3D29" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.29113, 0.172827, 1.91405, 0.458927, 0.179583, -0.643382, -0.356553, 0.0900304, -2.39096, -2.44416, -0.89051, -17.1575)
+transform = Transform3D(0.00584864, 0.340275, 0.264544, 0.019407, -0.552063, 0.16296, 0.876262, 0.00995561, -0.00537487, -1.59766, -1.1932, -18.6736)
 material_override = ExtResource("2_df1di")
-mesh = SubResource("BoxMesh_4v2o1")
+mesh = SubResource("PrismMesh_vhrg6")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground/MeshInstance3D29"]
@@ -285,7 +263,7 @@ transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D30" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.226261, 0.190397, -1.88455, 0.562956, 0.130462, 0.271481, 0.23321, -0.130205, -2.48374, -2.66391, -0.861306, -14.0755)
+transform = Transform3D(-0.29113, 0.172827, 1.91405, 0.458927, 0.179583, -0.643382, -0.356553, 0.0900304, -2.39096, -2.44416, -0.89051, -17.1575)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -297,7 +275,7 @@ transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D31" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.29113, 0.172827, 1.91405, 0.458927, 0.179583, -0.643382, -0.356553, 0.0900304, -2.39096, -2.45336, -0.876215, -17.1455)
+transform = Transform3D(-0.226261, 0.190397, -1.88455, 0.562956, 0.130462, 0.271481, 0.23321, -0.130205, -2.48374, -2.66391, -0.861306, -14.0755)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -309,7 +287,7 @@ transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
 
 [node name="MeshInstance3D32" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(-0.29113, 0.172827, 1.91405, 0.458927, 0.179583, -0.643382, -0.356553, 0.0900304, -2.39096, -2.6051, -0.876215, -17.0799)
+transform = Transform3D(-0.29113, 0.172827, 1.91405, 0.458927, 0.179583, -0.643382, -0.356553, 0.0900304, -2.39096, -2.45336, -0.876215, -17.1455)
 material_override = ExtResource("2_df1di")
 mesh = SubResource("BoxMesh_4v2o1")
 skeleton = NodePath("../..")
@@ -319,6 +297,12 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/MeshInstance3D32/StaticBody3D"]
 transform = Transform3D(0.999991, 0, 0, 0, 1, 0, 0, -3.49246e-10, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_icjt1")
+
+[node name="MeshInstance3D33" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(-0.29113, 0.172827, 1.91405, 0.458927, 0.179583, -0.643382, -0.356553, 0.0900304, -2.39096, -2.6051, -0.876215, -17.0799)
+material_override = ExtResource("2_df1di")
+mesh = SubResource("BoxMesh_4v2o1")
+skeleton = NodePath("../..")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Ground"]
 transform = Transform3D(0.874686, 0.153, 0, -0.505, 0.265004, 0, 0, 0, 3.101, -2.89388, 0.197351, 0.0339625)
@@ -407,21 +391,14 @@ shape = SubResource("BoxShape3D_icjt1")
 [node name="BubblePickup" parent="." instance=ExtResource("8_yx2a0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114479, -0.955684, -15.0618)
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.166712, 2.76906, -6.14252)
-pixel_size = 0.0166
-text = "Use WASD or left joystick
-to Move"
-font = ExtResource("7_vjkal")
-
 [node name="Label3D3" type="Label3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.166712, 2.27779, 2.05827)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -0.166712, 3.28919, 0.122777)
 pixel_size = 0.0166
 double_sided = false
 text = "Use WASD to Move"
 font = ExtResource("7_vjkal")
 
-[node name="Label3D3" type="Label3D" parent="."]
+[node name="Label3D4" type="Label3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.166712, 3.33343, 0)
 pixel_size = 0.0166
 double_sided = false
@@ -433,13 +410,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0292864, 2.43216, -15.7276)
 pixel_size = 0.0166
 text = "Collect the bubbles 
 and head to the bath!"
-font = ExtResource("7_vjkal")
-
-[node name="Label3D4" type="Label3D" parent="."]
-transform = Transform3D(0.786375, 0, 0.61775, 0, 1, 0, -0.61775, 0, 0.786375, -3.94436, -0.201106, -30.7789)
-pixel_size = 0.0166
-text = "Use the spacebar
-or any action button
-on the controller
-to jump"
 font = ExtResource("7_vjkal")

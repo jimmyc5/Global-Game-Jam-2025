@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/PlayerGroundCheck.gd" id="3_xlryd"]
 [ext_resource type="Script" path="res://scripts/camera_pivot.gd" id="3_yn6hj"]
 [ext_resource type="PackedScene" uid="uid://cwlfcxp8tvp2l" path="res://scenes/HUD.tscn" id="5_bqna3"]
-[ext_resource type="PackedScene" uid="uid://d2a40a41h2rsk" path="res://scenes/pause_menu.tscn" id="6_528yr"]
+[ext_resource type="PackedScene" path="res://scenes/pause_menu.tscn" id="6_528yr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0237i"]
 friction = 0.0
