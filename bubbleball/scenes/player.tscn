@@ -24,6 +24,7 @@ radius = 0.44
 script = ExtResource("1_15whe")
 move_speed = 500.0
 acceleration = 8.0
+jump_impulse = 12.0
 
 [node name="Bubble" type="RigidBody3D" parent="."]
 unique_name_in_owner = true
