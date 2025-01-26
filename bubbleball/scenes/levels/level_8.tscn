@@ -133,6 +133,72 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/stage_2/wall/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fmuw4")
 
+[node name="floor2" type="MeshInstance3D" parent="Ground/stage_2"]
+transform = Transform3D(9.52052, -0.012729, 10.149, 6.60756, 0.0363715, 9.62166e-07, -9.43977, 0.0126211, 10.2358, 82.5174, 5.68746, -65.8693)
+material_override = ExtResource("4_o4cko")
+mesh = SubResource("TorusMesh_bflnv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/stage_2/floor2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/stage_2/floor2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gmggr")
+
+[node name="wall2" type="MeshInstance3D" parent="Ground/stage_2"]
+transform = Transform3D(9.52052, -4.09559, 10.149, 6.60756, 11.7026, 0, -9.43977, 4.06086, 10.2358, 82.509, 5.70263, -65.8707)
+material_override = ExtResource("4_o4cko")
+mesh = SubResource("TorusMesh_i2nde")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/stage_2/wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/stage_2/wall2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fmuw4")
+
+[node name="floor3" type="MeshInstance3D" parent="Ground/stage_2"]
+transform = Transform3D(-5.32747, -0.00947649, -13.0292, 0.0898488, -0.0312799, 4.30009, -17.3656, 0.00274539, 4.01939, -88.9812, 5.70507, -136.834)
+material_override = ExtResource("4_o4cko")
+mesh = SubResource("TorusMesh_bflnv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/stage_2/floor3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/stage_2/floor3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gmggr")
+
+[node name="wall3" type="MeshInstance3D" parent="Ground/stage_2"]
+transform = Transform3D(-5.32747, -3.04908, -13.0292, 0.0898492, -10.0644, 4.30009, -17.3656, 0.883335, 4.01939, -88.9776, 5.68502, -136.834)
+material_override = ExtResource("4_o4cko")
+mesh = SubResource("TorusMesh_i2nde")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/stage_2/wall3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/stage_2/wall3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fmuw4")
+
+[node name="floor4" type="MeshInstance3D" parent="Ground/stage_2"]
+transform = Transform3D(-2.88165, 0.000328642, -21.6713, -1.86501, -0.0369076, 0.254861, -15.9543, 0.00425504, 3.88445, -29.3246, 5.70373, 43.959)
+material_override = ExtResource("4_o4cko")
+mesh = SubResource("TorusMesh_bflnv")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/stage_2/floor4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/stage_2/floor4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gmggr")
+
+[node name="wall4" type="MeshInstance3D" parent="Ground/stage_2"]
+transform = Transform3D(-2.88165, 0.105742, -21.6713, -1.86501, -11.8751, 0.254863, -15.9543, 1.36907, 3.88445, -29.3133, 5.68637, 43.9605)
+material_override = ExtResource("4_o4cko")
+mesh = SubResource("TorusMesh_i2nde")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground/stage_2/wall4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/stage_2/wall4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fmuw4")
+
 [node name="BubblePickup" parent="Ground/stage_2" instance=ExtResource("5_scekd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.23544, 6.81933, -25.6686)
 
